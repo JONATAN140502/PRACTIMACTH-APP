@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="VAMOS A MORIR PRACTIMACHT"/>
+    <HelloWorld msg="VAMOS A MORIR PRACTIMACHT con fe"/>
   </div>
 </template>
 
