@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Inicio from '../views/Inicio.vue'
 import Index from '../views/Index.vue'
+
 Vue.use(VueRouter)
 
 const routes = [

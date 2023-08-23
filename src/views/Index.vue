@@ -1,45 +1,122 @@
 <template>
-<div>
-  <Nav/>
-  <Cuerpo2 v-if="page=='home'" @cambiopagina="cambiopagina"/>
-  <Cuerpo v-if="page=='cuerpo'" @retornar="retornar"  />
-  <Cuerpo3 v-if="page=='cuerpo3'"/>
-  <Footer/>
-</div>
+  <main class="contenedor d-flex position-relative align-items-center">
+     <div class="contenedor-texto text-start text-white">
+        <h1 class="titulo">Entra ahora es tu momento </h1>
+        <h2 class="subtitulo">Bienvenido a Practi Macth</h2>
+        <a href="#" class="cta bg-white text-center rounded-2">Entra ahora</a>
+     </div>
+     <div  class="contenedor-imagen">
+        <img src="../assets/data-storage-b 1.svg" alt="" class="img" >
+     </div>
+     <img src="../assets/Vector 1.svg" alt="" class=" vector position-absolute top-0 end-0">
+  </main>
 </template>
+
 <script>
-import Nav from '../components/Nav.vue'
-import Cuerpo2 from '../components/Cuerpo2.vue'
-import Cuerpo from '../components/Cuerpo.vue'
-import Footer from '../components/Footer.vue'
-import Cuerpo3 from '../components/Cuerpo3.vue'
-export default{
-    name: 'Index',
-    components: {
-      Nav,
-      Cuerpo2,
-      Cuerpo,
-      Footer,
-      Cuerpo3
-    },
-
-    data(){
-      return{
-        page:'home'
-      }
-     },
-
-     methods:{
-        cambiopagina:function(page){
-          this.page = page;
-       },
-       retornar:function(){
-          this.page='home'
-       }
-     }
-
+export default {
 
 }
-
-
 </script>
+
+<style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+ .contenedor{
+    background: linear-gradient(90deg, #2B5876 0%, #4E4376 100%);
+    height: 100vh;
+ }
+ .vector{
+    width: 60%;
+ }
+ .contenedor-texto{
+    flex-basis: 50%;
+    padding-left: 60px;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+ }
+ .titulo{
+    font-size: 60px;
+    font-weight:700 ;
+ }
+ .subtitulo{
+    font-size: 30px;
+    font-weight:500 ;
+    margin: 20px 0;
+ }
+ .cta{
+    display: inline-block;
+    width: 150px;
+    padding: 15px 0;
+    text-decoration: none;
+    color: #2B5876;
+ }
+ .contenedor-imagen{
+    flex-basis: 50%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+ }
+ .img{
+    animation: ilustracion ease-in 1s infinite alternate;
+    width: 95%;
+ }
+ @keyframes ilustracion{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.04);
+    }
+ }
+
+ @media screen and (max-width: 912px){
+    .contenedor{
+        flex-direction: column-reverse;
+    }
+    .vector{
+        width: 80%;
+    }
+    .contenedor-texto{
+        display: flex;
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 40%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .titulo{
+        font-size: 40px;
+    }
+    .subtitulo{
+        font-size: 20px;
+    }
+    .contenedor-imagen{
+        flex-basis: 60%;
+       width: 100%;
+        align-items: center;
+        justify-content: center;
+        display:flex
+    }
+    .img{
+        height: 98%;
+    }
+ }
+
+ @media screen and (max-width: 555px){
+
+    .vector{
+        height: 48%; 
+        width: auto;
+    }
+    .contenedor-texto{
+        flex-basis: 40%;
+        justify-content: flex-start;
+    }
+    .titulo{
+        font-size: 30px;
+        text-align: center;
+    }
+ }
+</style>
