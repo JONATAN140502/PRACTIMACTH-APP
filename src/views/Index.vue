@@ -3,7 +3,7 @@
      <div class="contenedor-texto text-start text-white">
         <h1 class="titulo">Entra ahora es tu momento </h1>
         <h2 class="subtitulo">Bienvenido a Practi Macth</h2>
-        <a href="#" class="cta bg-white text-center rounded-2">Entra ahora</a>
+        <router-link to="/home" class="cta bg-white text-center rounded-2">Entra ahora</router-link>
      </div>
      <div  class="contenedor-imagen">
         <img src="../assets/data-storage-b 1.svg" alt="" class="img" >
