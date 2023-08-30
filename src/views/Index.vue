@@ -1,5 +1,6 @@
 <template>
-  <main class="contenedor d-flex position-relative align-items-center">
+ <div>
+   <main class="contenedor d-flex position-relative align-items-center">
      <div class="contenedor-texto text-start text-white">
         <h1 class="titulo">Entra ahora es tu momento </h1>
         <h2 class="subtitulo">Bienvenido a Practi Macth</h2>
@@ -10,6 +11,9 @@
      </div>
      <img src="../assets/Vector 1.svg" alt="" class=" vector position-absolute top-0 end-0">
   </main>
+
+ </div>
+  
 </template>
 
 <script>
@@ -20,13 +24,15 @@ export default {
 
 <style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+
  .contenedor{
     background: linear-gradient(90deg, #2B5876 0%, #4E4376 100%);
+    /*background: linear-gradient(175deg, rgba(73, 72, 72, 0.59) 0%, rgba(13, 46, 76, 0.50) 100%);*/
     height: 100vh;
+   
  }
  .vector{
-    width: 60%;
+    width: 50%;
  }
  .contenedor-texto{
     flex-basis: 50%;

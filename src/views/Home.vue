@@ -2,11 +2,11 @@
     <div >
         <header  >
                 <nav  >
-                    <a href="#" class="text-white">inicio</a>
-                    <a href="#" class="text-white">Acerca de</a>
-                    <a href="#" class="text-white">Portafolio</a>
-                    <a href="#" class="text-white">Servicios </a>
-                    <a href="#" class="text-white">Contacto</a>
+                    <router-link to="/" class="text-white a">inicio</router-link>
+                    <a href="#" class="text-white a">Acerca de</a>
+                    <a href="#" class="text-white a">Portafolio</a>
+                    <a href="#" class="text-white a">Servicios </a>
+                    <a href="#" class="text-white a">Contacto</a>
                 </nav>
                 <div class="header-icono ">
                     <img src="../assets/icono.png" alt="" class="inline-block">
@@ -118,16 +118,16 @@
             <h2 class="titulo-footer text-white">Contactanos , queremos ayudarte </h2>
              <div class="contenedor-footer m-auto d-flex">
                 <div class="content-foo  ">
-                    <h4 class=" text-white">phone </h4>
+                    <h4 class=" text-white">Telefono </h4>
                     <p class="">937398743</p>
                 </div>
                 <div class="content-foo  ">
-                    <h4 class=" text-white">phone </h4>
-                    <p class="">937398743</p>
+                    <h4 class=" text-white">Direccion </h4>
+                    <p class="">Chiclayo</p>
                 </div>
                 <div class="content-foo">
-                    <h4 class=" text-white">phone </h4>
-                    <p class="">937398743</p>
+                    <h4 class=" text-white">Correo </h4>
+                    <p class="">practimach@gmail.com</p>
                 </div>
              </div>
            </footer>
@@ -142,12 +142,13 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
   .contenedor{
     padding: 60px 0;
     width: 90%;
     max-width: 1000px;
     overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
    
   }
   .titulo{
@@ -155,6 +156,7 @@ export default {
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
+    font-weight: 600;
   }
 
 
@@ -164,23 +166,26 @@ export default {
    width: 100%;
    height: 650px;
    background: linear-gradient(175deg, rgba(73, 72, 72, 0.59) 0%, rgba(13, 46, 76, 0.50) 100%), url('../assets/fondo.jpg');
+   /*background: linear-gradient(175deg, rgb(43, 88, 118,0.49) 0%, rgb(78, 67, 118,0.50) 100%),url('../assets/fondo.jpg');*/
    background-size: cover;
    background-repeat: no-repeat;
    opacity: 1;
    position: relative;
    background-attachment: fixed; 
    background-position: center ;
+   font-family: 'Open Sans', sans-serif;
+   
  }
  nav{ 
     padding: 30px 120px 0 0;
     text-align: right;
  }
- nav > a{
-    font-weight: 300;
+ nav > .a{
+    font-weight: 500;
     text-decoration: none;
     margin-right: 10px;
   }
-  nav > a:hover{
+  nav > .a:hover{
     text-decoration: underline
   }
 
@@ -198,15 +203,18 @@ export default {
  header .texto-header{
     height: 430px;
     width: 100%;
+    
  }
  .texto-header h1{
     font-size: 50px;
+    font-weight: 900;
  }
  main .sobre-nosotros{
     padding: 30px 0 60px 0;
  }
  .texto-header h2{
     font-size: 30px;
+    font-weight: 400px;
  }
  .contenedor-sobre-nosotros{
   justify-content: space-evenly;
@@ -220,6 +228,9 @@ export default {
  }
  .contenido-textos h4{
     margin-bottom: 15px;
+    font-size: 23px;
+    color:#808B96 
+   
  }
  .contenido-textos h4 span{
     background: rgba(46, 162, 199, 0.66);
@@ -236,6 +247,7 @@ export default {
     padding: 0px 0px 30px 20px;
     text-align: justify;
     font-weight: 300;
+    color: #85929E;
  }
  .portafolio{
     background: #F2F2F2;
@@ -283,10 +295,14 @@ export default {
  .cards .card1 > .contenido-texto-card{
     width: 70%;   
  }
+ .cards .card1 > .contenido-texto-card h5{
+    font-weight: 600;
+ }
  .cards .card1 > .contenido-texto-card p{
     font-weight: 300;
     padding-top: 5px;
     font-size: 14px;
+    
  }
  /*our team */
   .about-services{
@@ -299,15 +315,20 @@ export default {
   }
   .servicio-ind{
     width:28%;
+   
     text-align: center;
   }
 
   .servicio-ind img{
     width: 90%;
+
   }
   .servicio-ind p{
     margin: 15px 0;
     text-align: justify;
+    font-weight: 300;
+    color: #85929E;
+    font-size: 15px;
   }
   /*footer */
   footer{
@@ -315,21 +336,26 @@ export default {
     padding:60px 0 50px 0;
     margin: auto;
     overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
   }
   .contenedor-footer{
     padding-top: 30px;
     justify-content: space-evenly;
     margin: auto;
   }
+  .titulo-footer{
+    font-weight: 800;
+  }
   .content-foo h4{
     text-align: center;
-    border-bottom: 3px solid rgba(46, 162, 199, 0.66);
+    border-bottom: 3px solid #AED6F1  ;
     padding-bottom: 5px;
     margin-bottom: 10px;
     text-align: left;
+    font-size: 17px;
   }
   .content-foo p{
-    color: #494848;
+    color:#D6DBDF ;
      text-align: left;
   }
   @media screen and (max-width:1060px){
@@ -409,7 +435,7 @@ export default {
         text-align: center;
         padding: 30px 0 0 0;
      }
-     nav > a{
+     nav > .a{
       margin-right: 3px;
       font-size: 15px;
      }
