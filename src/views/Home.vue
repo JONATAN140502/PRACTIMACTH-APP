@@ -152,7 +152,7 @@ export default {
    
   }
   .titulo{
-    color:rgba(46, 162, 199, 0.66);
+    color:rgba(46, 162, 199, 0.90);
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
@@ -165,7 +165,7 @@ export default {
  header{
    width: 100%;
    height: 650px;
-   background: linear-gradient(175deg, rgba(73, 72, 72, 0.59) 0%, rgba(13, 46, 76, 0.50) 100%), url('../assets/fondo.jpg');
+   background: linear-gradient(175deg, rgba(73, 72, 72, 0.60) 0%, rgba(13, 46, 76, 0.70) 100%), url('../assets/fondo.jpg');
    /*background: linear-gradient(175deg, rgb(43, 88, 118,0.49) 0%, rgb(78, 67, 118,0.50) 100%),url('../assets/fondo.jpg');*/
    background-size: cover;
    background-repeat: no-repeat;
@@ -233,7 +233,7 @@ export default {
    
  }
  .contenido-textos h4 span{
-    background: rgba(46, 162, 199, 0.66);
+    background: rgba(46, 162, 199, 0.90);
     border-radius: 50%;
     display: inline-block;
     text-align:center;
@@ -276,7 +276,7 @@ export default {
     justify-content: space-evenly;
  }
  .cards .card1{
-    background: rgba(46, 162, 199, 0.66);
+    background: rgba(46, 162, 199, 0.90);
     width: 46%;
     height: 200px;
     align-items: center;
@@ -332,7 +332,8 @@ export default {
   }
   /*footer */
   footer{
-    background: #AEB6BF;
+    /*background: #AEB6BF;*/
+    background: #2C3E50;
     padding:60px 0 50px 0;
     margin: auto;
     overflow: hidden;
