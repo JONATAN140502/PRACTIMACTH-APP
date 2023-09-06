@@ -11,7 +11,7 @@ export default new Vuex.Store({
     // url: "https://bmback.howertpi.com/api/v1", // nube howert
     token:null,
     user: {
-      id: "234",
+      id: null,
       name: null,
       email: null,
       last_name: null,
@@ -68,14 +68,20 @@ export default new Vuex.Store({
     get__campus(state){
       return state.campus;
     },
-    get__datacampus(state){
-      return state.dataCampus;
+    get__company(state){
+      return state.company;
+    },
+    get__student(state){
+      return state.student;
     },
   },
   mutations: {
     /** auth */
-    mt_set_auth(state,payload) {
-      state.user = payload;
+    mt_set_company(state,payload) {
+      state.company = payload;
+    },
+    mt_set_student(state,payload) {
+      state.student = payload;
     },
     mt_set_refresh(state , user) {
       state.user = user;

@@ -1,118 +1,121 @@
 <template>
-  
     <div class="contenedor ">
-         <div class="login">
-           <img src="../assets/icono.png" alt="">
-           <h2>Bienvenido</h2>
-           <p class="subtitulo-rol">[ EMPRESA ]</p>
-           <div class="login-input">
-            <input type="text"  v-model="login.login" placeholder="Ingresa tu usuario">
-           </div>
-           <div class="login-input">
-            <input type="password"  v-model="login.password" placeholder="Ingresa tu contraseña" > 
-           </div>    
+        <div class="login">
+            <img src="../assets/icono.png" alt="">
+            <h2>Bienvenido</h2>
+            <p class="subtitulo-rol">[ EMPRESA ]</p>
+            <div class="login-input">
+                <input type="text" v-model="login.login" placeholder="Ingresa tu usuario">
+            </div>
+            <div class="login-input">
+                <input type="password" v-model="login.password" placeholder="Ingresa tu contraseña">
+            </div>
             <p> <a href=""> Olvidaste tu contraseña?</a></p>
-       
+
             <button @click="loginSend"> INGRESAR</button>
             <p>Nuevo en PractiMatch? <a href=""> Registrate aqui</a></p>
-         </div>
+        </div>
     </div>
-  
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 export default {
-  
-  data () {
-    return {
-      login: {
-        login: null,
-        password: null
-      }
-    }
-  },
-  created() {
-    this.url = this.$store.getters.get__url
-    document.body.style.backgroundColor =  'rgba(46, 162, 199, 0.90)'; // Cambia esto al color deseado
-  },
-  methods: {
-    ...mapActions(['get', 'post']),
-    loginSend: function () {
-      // console.log(this.login);
-      if (this.login.login != null) {
-        if (this.login.password != null) {
-          this.post({
-            url:  'http://practi-back.test/api/login/logincompany',
-            params: this.login
-          })
-            .then((response) => {
-              if (response.company!=null) {
-                // this.$store.commit('mt_set_auth', response.user)
-                // this.$store.commit('mt_set_datacampus', response.campus)
-                // this.$router.push({ path: 'home' })
-                console.log(this.$store.getters.get__url);
-                console.log(this.$store.getters.get__user);
-                console.log("company:"+response.state);
-              } else {
-               
-              }
-            })
-            .catch((errors) => {
-              
-            })
-        } else {
-          alert('no password')
+
+    data() {
+        return {
+            login: {
+                login: null,
+                password: null
+            }
         }
-      } else {
-        alert('no user')
-      }
+    },
+    created() {
+        this.url = this.$store.getters.get__url
+        document.body.style.backgroundColor = 'rgba(46, 162, 199, 0.90)'; // Cambia esto al color deseado
+    },
+    methods: {
+        ...mapActions(['get', 'post']),
+
+        loginSend: function () {
+            if (this.login.login != null) {
+                if (this.login.password != null) {
+                    this.post({
+                        url: this.url + '/login/logincompany',
+                        params: this.login
+                    })
+                        .then((response) => {
+                            if (response.company != null) {
+                                this.$store.commit('mt_set_company', response.company);
+                                console.log(this.$store.getters.get__company);
+                                console.log(this.$store.getters.get__user);
+                                console.log("company:" + response.state);
+                                this.$router.push({ path: '/PanelEmpresa' })
+                            } else {
+                               alert('Datos incorrectos');
+                            }
+                        })
+                        .catch((errors) => {
+                            
+                        });
+                } else {
+                    alert('No se ha proporcionado una contraseña');
+                }
+            } else {
+                alert('No se ha proporcionado un nombre de usuario');
+            }
+        }
     }
-  }
-  ,
-  beforeDestroy() {
-    
-    document.body.style.backgroundColor = 'white'; // Cambia esto al color predeterminado
-  }
+    ,
+    beforeDestroy() {
+
+        document.body.style.backgroundColor = 'white'; // Cambia esto al color predeterminado
+    }
 }
 </script >
 
 <style scoped>
-.contenedor{
-   
+.contenedor {
+
     display: flex;
     justify-content: center;
     width: 100%;
-   font-family: 'Open Sans', sans-serif;
-  
+    font-family: 'Open Sans', sans-serif;
+
 }
-.login{
-   margin-top: 40px;
-    background:#FFFFFF;
+
+.login {
+    margin-top: 40px;
+    background: #FFFFFF;
     text-align: center;
     padding: 40px 50px;
 
 }
-.login-input{
+
+.login-input {
     margin-bottom: 20px;
 }
-.login-input input{
+
+.login-input input {
     width: 80%;
     height: 39px;
     border-radius: 50px;
-    padding:  4px 20px 4px 20px;
-    border: 1px solid  #85929E;
+    padding: 4px 20px 4px 20px;
+    border: 1px solid #85929E;
 }
+
 .login-input input:focus {
- border-color: #FFFFFF;
+    border-color: #FFFFFF;
 }
-.login h2{
+
+.login h2 {
     margin-bottom: 30px;
     font-weight: 600;
 }
-.contenedor button{
+
+.contenedor button {
     width: 80%;
-    padding: 10px ;
+    padding: 10px;
     border: none;
     background: rgba(46, 162, 199, 0.90);
     color: #FFFFFF;
@@ -122,25 +125,25 @@ export default {
     transition: transform 0.6s ease;
 }
 
-.contenedor button:hover,.contenedor button:focus{
+.contenedor button:hover,
+.contenedor button:focus {
     transform: scale(1.05);
 }
-.subtitulo-rol{
+
+.subtitulo-rol {
     margin-top: -20px;
     font-size: 17px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
 }
 
-@media screen and (max-width:362px){
+@media screen and (max-width:362px) {
 
-.login img{
-    width: 90%;
-}
+    .login img {
+        width: 90%;
+    }
 
-            
-            
-        
-}
 
-</style>
+
+
+}</style>

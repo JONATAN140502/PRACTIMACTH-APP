@@ -6,14 +6,14 @@
            <h2>Bienvenido</h2>
            <p class="subtitulo-rol">[ ESTUDIANTE ]</p>
            <div class="login-input">
-            <input type="text" placeholder="Ingresa tu usuario">
+            <input type="text"  v-model="login.login" placeholder="Ingresa tu usuario">
            </div>
            <div class="login-input">
-            <input type="password" placeholder="Ingresa tu contraseña" > 
+            <input type="password" v-model="login.password"  placeholder="Ingresa tu contraseña" > 
            </div>    
              <p> <a href=""> Olvidaste tu contraseña?</a></p>
        
-            <button> INGRESAR</button>
+            <button @click="loginSend"> INGRESAR</button>
             <p>Nuevo en PractiMatch? <a href=""> Registrate aqui</a></p>
          </div>
     </div>
@@ -21,17 +21,62 @@
 </template>
 
 <script>
+
+import { mapActions } from 'vuex'
 export default {
+
+    data() {
+        return {
+            login: {
+                login: null,
+                password: null
+            }
+        }
+    },
     created() {
-    // Cambia el color de fondo del body cuando se crea este componente
-    document.body.style.backgroundColor =  'rgba(46, 162, 199, 0.90)'; // Cambia esto al color deseado
-  },
-  beforeDestroy() {
-    // Restaura el color de fondo del body cuando se destruye el componente
-    document.body.style.backgroundColor = 'white'; // Cambia esto al color predeterminado
-  }
+        this.url = this.$store.getters.get__url
+        document.body.style.backgroundColor = 'rgba(46, 162, 199, 0.90)'; // Cambia esto al color deseado
+    },
+    methods: {
+        ...mapActions(['get', 'post']),
+
+        loginSend: function () {
+            if (this.login.login != null) {
+                if (this.login.password != null) {
+                    this.post({
+                        url: this.url + '/login/loginstudent',
+                        params: this.login
+                    })
+                        .then((response) => {
+                            if (response.student != null) {
+                                this.$store.commit('mt_set_student', response.student);
+                                console.log(this.$store.getters.get__student);
+                                console.log(this.$store.getters.get__user);
+                                console.log("company:" + response.state);
+                                alert('BIENVENIDO');
+                            } else {
+                               alert('Datos incorrectos');
+                            }
+                        })
+                        .catch((errors) => {
+                            
+                        });
+                } else {
+                    alert('No se ha proporcionado una contraseña');
+                }
+            } else {
+                alert('No se ha proporcionado un nombre de usuario');
+            }
+        }
+    }
+    ,
+    beforeDestroy() {
+
+        document.body.style.backgroundColor = 'white'; // Cambia esto al color predeterminado
+    }
 }
 </script >
+
 
 <style scoped>
 .contenedor{
