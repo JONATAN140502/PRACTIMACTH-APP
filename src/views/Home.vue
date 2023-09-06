@@ -36,7 +36,7 @@
                             <p> <Strong> Alertas personalizadas. </Strong> nosotros te avisaremos.</p>
                             <p> <Strong>Completa tu perfil. </Strong>Muéstrate profesional y ganarás visibilidad.</p>
                           </div>
-                          <button>Crea tu cuenta gratis</button>
+                          <button class="btn-crear-cuenta-estudiante">Crea tu cuenta gratis</button>
                      </div>
                      <img src="../assets/Imagen.jpg" alt="">
 
@@ -96,7 +96,7 @@
             </section>
             <section class="clientes ">
                 <div class="contenedor m-auto">
-                    <h2 class="titulo">A quienes va dirigido</h2>
+                    <h2 class="titulo">¿ A quienes va dirigido ?</h2>
                 <div class="cards d-flex">
                     <div class="card1 d-flex ">
                         <img src="../assets/img1-clientes.jpg" alt="">
@@ -224,8 +224,11 @@ export default {
   nav> .ingresar:hover{
     background:#D4E6F1 ;
     text-decoration: none !important;
-    color: #000000 !important
+    color: #000000 !important;
+
   }
+
+  
   nav > .a:hover{
     text-decoration: underline
   }
@@ -299,6 +302,12 @@ export default {
     justify-content: space-evenly;
  }
 
+.btn-crear-cuenta-estudiante{
+    transition: transform 0.4s ease;
+}
+.btn-crear-cuenta-estudiante:hover,.btn-crear-cuenta-estudiante:focus{
+    transform: scale(1.1);
+}
 
  main .sobre-nosotros{
     padding: 30px 0 60px 0;
