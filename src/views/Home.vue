@@ -450,6 +450,7 @@ export default {
   }
   .titulo-footer{
     font-weight: 800;
+    text-align: center;
   }
   .content-foo h4{
     text-align: center;
