@@ -3,8 +3,8 @@
         <header  >
                 <nav  >
                     <router-link to="/" class="text-white a">Inicio</router-link>
-                    <a href="#" class="text-white a">Eres Empresa ! Ven unete a Nosotros ¡</a>
-                    <a href="#" class=" a ingresar">Registrate Gratis</a>
+                    <router-link to="/LoginEmpresas" class="text-white a">Eres Empresa ! Ven unete a Nosotros ¡</router-link>
+                    <router-link to="/LoginAlumnos" class=" a ingresar">Postula aqui</router-link>
                 </nav>
                 <div class="header-icono ">
                     <img src="../assets/icono.png" alt="" class="inline-block">

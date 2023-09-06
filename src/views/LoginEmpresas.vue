@@ -4,14 +4,14 @@
          <div class="login">
            <img src="../assets/icono.png" alt="">
            <h2>Bienvenido</h2>
-           <p class="subtitulo-rol">[ ESTUDIANTE ]</p>
+           <p class="subtitulo-rol">[ EMPRESA ]</p>
            <div class="login-input">
             <input type="text" placeholder="Usuario">
            </div>
            <div class="login-input">
             <input type="password" placeholder="Contraseña" > 
            </div>    
-             <p> <a href=""> Olvidaste tu contraseña?</a></p>
+            <p> <a href=""> Olvidaste tu contraseña?</a></p>
        
             <button> INGRESAR</button>
             <p>Nuevo en PractiMatch? <a href=""> Registrate aqui</a></p>
@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .contenedor{
-    background: rgba(46, 162, 199, 0.90);
+    background: rgba(49, 129, 156, 0.9);
     height: 100vh;
     display: flex;
     justify-content: center;
