@@ -22,27 +22,29 @@
 
 <script>
 export default {
-
+    created() {
+    // Cambia el color de fondo del body cuando se crea este componente
+    document.body.style.backgroundColor =  'rgba(46, 162, 199, 0.90)'; // Cambia esto al color deseado
+  },
+  beforeDestroy() {
+    // Restaura el color de fondo del body cuando se destruye el componente
+    document.body.style.backgroundColor = 'white'; // Cambia esto al color predeterminado
+  }
 }
 </script >
 
 <style scoped>
 .contenedor{
-    background: rgba(46, 162, 199, 0.90);
-    height: 100vh;
     display: flex;
     justify-content: center;
     width: 100%;
    font-family: 'Open Sans', sans-serif;
-padding-bottom: 100px;
 }
 .login{
    margin-top: 40px;
-    height: 80vh;
     background:#FFFFFF;
     text-align: center;
     padding: 40px 50px;
-
 }
 .login-input{
     margin-bottom: 20px;
@@ -87,10 +89,7 @@ padding-bottom: 100px;
 .login img{
     width: 90%;
 }
-
-            
-            
-        
+                   
 }
 
 </style>
