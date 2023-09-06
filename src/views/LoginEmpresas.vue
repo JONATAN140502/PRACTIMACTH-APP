@@ -6,10 +6,10 @@
            <h2>Bienvenido</h2>
            <p class="subtitulo-rol">[ EMPRESA ]</p>
            <div class="login-input">
-            <input type="text" placeholder="Usuario">
+            <input type="text" placeholder="Ingresa tu usuario">
            </div>
            <div class="login-input">
-            <input type="password" placeholder="Contraseña" > 
+            <input type="password" placeholder="Ingresa tu contraseña" > 
            </div>    
             <p> <a href=""> Olvidaste tu contraseña?</a></p>
        
@@ -70,8 +70,12 @@ padding-bottom: 100px;
     border-radius: 50px;
     margin-top: 10px;
     margin-bottom: 12px;
+    transition: transform 0.6s ease;
 }
 
+.contenedor button:hover,.contenedor button:focus{
+    transform: scale(1.05);
+}
 .subtitulo-rol{
     margin-top: -20px;
     font-size: 17px;
