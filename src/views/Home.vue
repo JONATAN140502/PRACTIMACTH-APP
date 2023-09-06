@@ -7,6 +7,7 @@
                     <a href="#" class="text-white a">Portafolio</a>
                     <a href="#" class="text-white a">Servicios </a>
                     <a href="#" class="text-white a">Contacto</a>
+                    <a href="#" class=" a ingresar">Ingresar</a>
                 </nav>
                 <div class="header-icono ">
                     <img src="../assets/icono.png" alt="" class="inline-block">
@@ -176,6 +177,7 @@ export default {
    font-family: 'Open Sans', sans-serif;
    
  }
+ /*nav*/
  nav{ 
     padding: 30px 120px 0 0;
     text-align: right;
@@ -184,6 +186,19 @@ export default {
     font-weight: 500;
     text-decoration: none;
     margin-right: 10px;
+  }
+
+  nav > .ingresar{
+    border:#D4E6F1  solid 3px;
+    padding: 5px 13px;
+    border-radius: 10px;
+    color:#D4E6F1 ;
+
+  }
+  nav> .ingresar:hover{
+    background:#D4E6F1 ;
+    text-decoration: none !important;
+    color: #000000 !important
   }
   nav > .a:hover{
     text-decoration: underline
