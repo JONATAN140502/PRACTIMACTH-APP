@@ -6,12 +6,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    url:"http://practi-back.test/api/", // local
+    url:"http://practi-back.test/api", // local
     //url: "https://clinicaback.devmiguelrevilla.com/api/v1", // nube dev
     // url: "https://bmback.howertpi.com/api/v1", // nube howert
     token:null,
     user: {
-      id: null,
+      id: "234",
       name: null,
       email: null,
       last_name: null,
