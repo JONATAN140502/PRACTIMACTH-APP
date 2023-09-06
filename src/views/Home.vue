@@ -2,12 +2,9 @@
     <div >
         <header  >
                 <nav  >
-                    <router-link to="/" class="text-white a">inicio</router-link>
-                    <a href="#" class="text-white a">Acerca de</a>
-                    <a href="#" class="text-white a">Portafolio</a>
-                    <a href="#" class="text-white a">Servicios </a>
-                    <a href="#" class="text-white a">Contacto</a>
-                    <a href="#" class=" a ingresar">Ingresar</a>
+                    <router-link to="/" class="text-white a">Inicio</router-link>
+                    <a href="#" class="text-white a">Eres Empresa ! Ven unete a Nosotros ¡</a>
+                    <a href="#" class=" a ingresar">Registrate Gratis</a>
                 </nav>
                 <div class="header-icono ">
                     <img src="../assets/icono.png" alt="" class="inline-block">
@@ -24,22 +21,47 @@
                 </div>
                 
         </header>
-           <main >
-            <section class="contenedor m-auto sobre-nosotros ">
-               <h2 class="titulo">Nuestro Producto</h2>
-               <div class="contenedor-sobre-nosotros d-flex">
-                 <img src="../assets/svg-1.svg" alt="" class="imagen-about-us">
-                 <div class="contenido-textos text-start">
-                    <h4><span class=" text-white">1</span>Personalización de Oportunidades</h4>
-                    <p>La plataforma permite a los estudiantes buscar y filtrar
-                     oportunidades de prácticas según sus intereses, habilidades y metas profesionales.
-                    </p>
-                    <h4><span class=" text-white" >2</span>Proceso de selección optimizado</h4>
-                    <p>Para las empresas, la plataforma facilita el proceso de identificación y 
-                       reclutamiento de jóvenes talentos para prácticas.
-                    </p>
-                 </div>
-               </div>
+           <main > 
+            <section class="contenedor m-auto registro">
+                
+                    <h2 class="">Si buscas experiencia !PractiMatch es tu mejor aliado¡</h2>
+                    <h5>Practi Match, donde talentos y oportunidades se encuentran</h5>
+                    <div class="d-flex  contenedor-registro">
+                     <div class="registro-texto">
+                        <h4>Te ayudamos a buscar oportunidades de practicas</h4>
+                        <p class="resgistro-texto-p"> Haz que tus habilidades sean visibles para las empresas </p>
+                          <div class="registro-contenido">
+                            <p> <Strong> Registro gratuito. </Strong>Encuentra tu próximo trabajo hoy</p>
+                            <p> <Strong> Ofertas cada día. </Strong>Practicas que se ajustan a tu perfil.</p>
+                            <p> <Strong> Alertas personalizadas. </Strong> nosotros te avisaremos.</p>
+                            <p> <Strong>Completa tu perfil. </Strong>Muéstrate profesional y ganarás visibilidad.</p>
+                          </div>
+                          <button>Crea tu cuenta gratis</button>
+                     </div>
+                     <img src="../assets/Imagen.jpg" alt="">
+
+                </div>
+                
+
+            </section>
+            <section class=" sobre-nosotros ">
+                <div class="contenedor m-auto">
+                    <h2 class="titulo">Nuestro Producto</h2>
+                    <div class="contenedor-sobre-nosotros d-flex">
+                        <img src="../assets/svg-1.svg" alt="" class="imagen-about-us">
+                        <div class="contenido-textos text-start">
+                            <h4><span class=" text-white">1</span>Personalización de Oportunidades</h4>
+                            <p>La plataforma permite a los estudiantes buscar y filtrar
+                            oportunidades de prácticas según sus intereses, habilidades y metas profesionales.
+                            </p>
+                            <h4><span class=" text-white" >2</span>Proceso de selección optimizado</h4>
+                            <p>Para las empresas, la plataforma facilita el proceso de identificación y 
+                            reclutamiento de jóvenes talentos para prácticas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
             </section>
             <section class="portafolio">
                 <div class="contenedor m-auto">
@@ -72,8 +94,9 @@
                     </div>
                 </div>
             </section>
-            <section class="clientes contenedor m-auto">
-                <h2 class="titulo">Nuestros Clientes</h2>
+            <section class="clientes ">
+                <div class="contenedor m-auto">
+                    <h2 class="titulo">A quienes va dirigido</h2>
                 <div class="cards d-flex">
                     <div class="card1 d-flex ">
                         <img src="../assets/img1-clientes.jpg" alt="">
@@ -93,6 +116,9 @@
                     </div>
                     
                 </div>
+                    
+                </div>
+                
                
             </section>
             <section class="about-services">
@@ -153,7 +179,7 @@ export default {
    
   }
   .titulo{
-    color:rgba(46, 162, 199, 0.90);
+    color:#2ea2c7e6;
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
@@ -224,9 +250,63 @@ export default {
     font-size: 50px;
     font-weight: 900;
  }
+ /*main*/
+ main .registro{
+    padding: 30px 0 60px 0;
+
+ }
+ .registro h2{
+    color:rgba(46, 162, 199, 0.90);
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+ }
+ .registro h5{
+    margin-bottom: 60px;
+    color:#808B96;
+    text-align: center;
+    font-weight: 600;
+ }
+ .registro img{
+    height: 30%;
+ }
+ .registro-texto{
+    text-align: left;
+ }
+ .registro-texto h4{
+  font-weight: 600;
+ }
+ .resgistro-texto-p{
+    margin-bottom: 40px;
+    font-size: 20px;
+ }
+ .registro-contenido{
+    color:#808B96; 
+ }
+ .registro-contenido strong{
+    color: #000000;
+ }
+ .registro-texto button{
+    padding: 15px 35px;
+    border: none;
+    background: rgba(46, 162, 199, 0.90);
+    color: #FFFFFF;
+    border-radius: 50px;
+    margin-top: 40px;
+ }
+ 
+ .contenedor-registro{
+    justify-content: space-evenly;
+ }
+
+
  main .sobre-nosotros{
     padding: 30px 0 60px 0;
+   
  }
+.sobre-nosotros{
+    background: #F2F2F2;
+}
  .texto-header h2{
     font-size: 30px;
     font-weight: 400px;
@@ -264,10 +344,7 @@ export default {
     font-weight: 300;
     color: #85929E;
  }
- .portafolio{
-    background: #F2F2F2;
-    
- }
+ 
  .galeria-port{
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -287,6 +364,9 @@ export default {
     display: block;
  }
  /*Cliente */
+ .clientes{
+    background: #F2F2F2;
+ }
  .cards{
     justify-content: space-evenly;
  }
@@ -321,7 +401,7 @@ export default {
  }
  /*our team */
   .about-services{
-    background: #F2F2F2;
+  
     padding-bottom: 30px;
   }
   .servicios-cont{
@@ -383,11 +463,23 @@ export default {
         justify-content: center;
         align-items: center;
     }
+
     .sobre-nosotros .contenido-textos{
         width: 96%;
     }
     .imagen-about-us{
         padding-bottom: 50px;
+    }
+    .contenedor-registro{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-registro img{
+        display: none;
+    }
+    .registro-texto button{
+        width: 100%;
     }
   }
   @media screen and (max-width:860px){
