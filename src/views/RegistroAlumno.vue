@@ -1,18 +1,20 @@
 <template>
   <div>
     <div class="contenedor ">
-          <div  class="  contendor-img">
-          <h2>Esta es tu oportunidad</h2>
-           <img src="../assets/img-estudiante.jpg" alt="" class="img-estudiante d-flex">
-          </div>
-          <div class="contenedor-formulario ">
-            <h3>Create una cuenta </h3>
-            <div class="contenedor-formulario-input">
-                <div>
+      <div class="  contendor-img">
+        <h2>Esta es tu oportunidad</h2>
+        <p>Si eres estudiante en busca de practicas laborales registrate aqui y enterate de todas las oportunidades
+          que tenemos disponibles para ti</p>
+        <img src="../assets/svg-estudiante.svg" alt="" class="img-estudiante d-flex">
+      </div>
+      <div class="contenedor-formulario ">
+        <h3>Registro Estudiante  </h3>
+        <div class="contenedor-formulario-input">
+          <div>
             <label for=""> DNI </label>
             <input type="text">
           </div>
-          
+
           <div>
             <label for=""> NOMBRE: </label>
             <input type="text">
@@ -22,19 +24,19 @@
             <input type="text">
           </div>
           <div>
-            <label for=""> CODIGO:  </label>
+            <label for=""> CODIGO: </label>
             <input type="text">
           </div>
           <div>
-            <label for=""> CORREO  </label>
+            <label for=""> CORREO </label>
             <input type="text">
           </div>
           <div>
-            <label for=""> HABILIDADES  </label>
+            <label for=""> HABILIDADES </label>
             <input type="text">
           </div>
           <div>
-            <label for=""> CICLO  </label>
+            <label for=""> CICLO </label>
             <input type="text">
           </div>
           <div>
@@ -46,14 +48,14 @@
             <input type=" password">
           </div>
 
-            </div>
-          
-           <button type="button"> Crear Cuenta </button>
+        </div>
+
+        <button type="button"> Crear Cuenta </button>
 
 
 
-        
-           
+
+
 
       </div>
     </div>
@@ -83,21 +85,24 @@ export default {
   margin-top: 60px;
    background: #2C3E50;
    font-family: 'Open Sans', sans-serif;
+   
 }
 .img-estudiante{
- width: 55%;
+ width: 70%;
  margin: 0 auto;
 }
 .contenedor-formulario{
     text-align: left;
-    width: 49%;
+    width: 48%;
     background: rgb(213, 230, 241,0.3) ;
-    margin: 0px 40px;
-    padding: 50px 40px;
-  
+   
+    padding: 50px 60px;
+   
 }
 .contenedor-formulario h3{
     margin-bottom: 20px;
+    font-weight: 600; 
+  
 }
 .contenedor-formulario-input{
     display: flex;
@@ -123,16 +128,73 @@ export default {
 }
 .contendor-img{
     width: 49%;
-   
     padding: 40px; 
 }
 .contendor-img h2{
     text-align: center;
-    margin-bottom: 50px;
-    color: #FFFFFF;
+    margin-bottom: 10px;
+    color: #2ea2c7e6;
     font-weight: 600;
+    margin-top:10px
+}
+.contendor-img p{
+  color:#FFFFFF;
+  padding: 0 20px;
+  text-align: justify;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
+@media screen and (max-width:1390px){
+  .contendor-img{
+    display: none;
+  }
+  .contenedor-formulario{
+    width: 100%;
+    margin: 0 auto;
+  }
 
+}
+@media screen and (max-width:680px){
+  .contenedor{
+    width: 100%;
+    margin-top: 0px;
+    height: 100vh;
+    
+  }
+  .contenedor-formulario{
+    padding: 70px 40px;
+    
+  }
+@media screen and (max-width:475px){
+  .contenedor-formulario-input{
+     margin-bottom: 15px;
+  
+  }
+  .contenedor-formulario{
+    padding: 15px 40px;
+    
+  }
+  .contenedor-formulario-input label{
+    width: 100%;
+  }
+  .contenedor-formulario-input input{
+    width: 100%;
+    margin-bottom: 6px;
+    height: 27px;
+  }
+  .contenedor-formulario button{
+    width: 100%;
+
+  }
+  .contenedor-formulario h3{
+    margin-bottom: 5px;
+    font-weight: 600; 
+   font-size: 23px;
+}
+  
+}
+
+}
 
 </style>
