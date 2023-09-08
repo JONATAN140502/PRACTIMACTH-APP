@@ -22,18 +22,20 @@
             <div class="contenedor-menu">
                 <ul>
                     <li>
-                        <a href=""> Inicio</a>
+                        <a href="">Inicio</a>
                     </li>
                     <li>
-                        <a href=""> Estudiantes</a>
+                        <a href="">Perfil</a>
                     </li>
                     <li>
-                        <a href=""> Estudiantes</a>
+                        <a href="">Mis Oferta de Practicas</a>
                     </li>
                     <li>
-                        <a href=""> Estudiantes</a>
+                        <a href=""> Mis Macth</a>
                     </li>
-
+                    <li>
+                        <a href=""> Cerrar</a>
+                    </li>
                 </ul>
                 
 
