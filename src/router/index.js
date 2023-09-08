@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: () => import(/* webpackChunkName: "about" */ '../views/RegistroEmpresa.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Index.vue')
   },
   {
     path: '/home',
@@ -28,7 +28,7 @@ const routes = [
   {
     path: '/PanelEmpresa',
     name: 'PanelEmpresa',
-    component: () => import('../views/PanelEmpresa.vue')
+    component: () => import('../views/Empresa/PanelEmpresa.vue')
   },
   {
     path: '/PanelEstudiante',
