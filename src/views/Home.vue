@@ -36,7 +36,7 @@
                             <p> <Strong> Alertas personalizadas. </Strong> nosotros te avisaremos.</p>
                             <p> <Strong>Completa tu perfil. </Strong>Muéstrate profesional y ganarás visibilidad.</p>
                           </div>
-                          <button class="btn-crear-cuenta-estudiante">Crea tu cuenta gratis</button>
+                          <button @click="navegarRegistroEstudiante" class="btn-crear-cuenta-estudiante">Crea tu cuenta gratis</button>
                      </div>
                      <img src="../assets/Imagen.jpg" alt="">
 
@@ -165,7 +165,12 @@
 
 <script>
 export default {
-
+    methods: {
+    navegarRegistroEstudiante() {
+      // Usa el método de enrutamiento push para navegar a la ruta deseada
+      this.$router.push({ name: 'RegistroEstudiante' }) // Reemplaza 'inicio' con el nombre de tu ruta
+    }
+  }
 }
 </script>
 
@@ -289,14 +294,7 @@ export default {
  .registro-contenido strong{
     color: #000000;
  }
- .registro-texto button{
-    padding: 15px 35px;
-    border: none;
-    background: rgba(46, 162, 199, 0.90);
-    color: #FFFFFF;
-    border-radius: 50px;
-    margin-top: 40px;
- }
+ 
  
  .contenedor-registro{
     justify-content: space-evenly;
@@ -304,10 +302,18 @@ export default {
 
 .btn-crear-cuenta-estudiante{
     transition: transform 0.4s ease;
+    padding: 15px 35px;
+    border: none;
+    background: rgba(46, 162, 199, 0.90);
+    color: #FFFFFF;
+    border-radius: 50px;
+    margin-top: 40px;
 }
 .btn-crear-cuenta-estudiante:hover,.btn-crear-cuenta-estudiante:focus{
     transform: scale(1.1);
+    margin-left: 10px;
 }
+
 
  main .sobre-nosotros{
     padding: 30px 0 60px 0;

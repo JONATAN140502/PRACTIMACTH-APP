@@ -29,12 +29,12 @@ const routes = [
   },
   {
     path: '/RegistroEstudiante',
-    name: 'LoginEmpresas',
+    name: 'RegistroEstudiante',
     component: () => import(/* webpackChunkName: "about" */ '../views/RegistroAlumno.vue')
   },
   {
     path: '/RegistroEmpresa',
-    name: 'LoginEmpresas',
+    name: 'RegistroEmpresa',
     component: () => import(/* webpackChunkName: "about" */ '../views/RegistroEmpresa.vue')
   },
   
