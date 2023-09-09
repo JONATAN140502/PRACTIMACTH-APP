@@ -11,38 +11,27 @@
         <h3>Registro Empresa  </h3>
         <div class="contenedor-formulario-input">
           <div>
-            <label for=""> DNI </label>
+            <label for=""> RUC: </label>
             <input type="text">
           </div>
 
           <div>
-            <label for=""> NOMBRE: </label>
+            <label for=""> RAZON SOCIAL: </label>
             <input type="text">
           </div>
           <div>
-            <label for=""> APELLIDOS: </label>
+            <label for=""> NOMBRE COMERCIAL: </label>
             <input type="text">
           </div>
           <div>
-            <label for=""> CODIGO: </label>
+            <label for=""> CORREO: </label>
             <input type="text">
           </div>
-          <div>
-            <label for=""> CORREO </label>
-            <input type="text">
+          <div class="">
+            <label for=""> DESCRIPCION: </label>
+            <input type=" text">
           </div>
-          <div>
-            <label for=""> HABILIDADES </label>
-            <input type="text">
-          </div>
-          <div>
-            <label for=""> CICLO </label>
-            <input type="text">
-          </div>
-          <div>
-            <label for=""> USUARIO </label>
-            <input type="text">
-          </div>
+          
           <div>
             <label for=""> CONTRASEÑA</label>
             <input type=" password">
