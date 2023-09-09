@@ -14,7 +14,7 @@
              <p> <a href=""> Olvidaste tu contraseña?</a></p>
        
             <button @click="loginSend"> INGRESAR</button>
-            <p>Nuevo en PractiMatch? <a href=""> Registrate aqui</a></p>
+            <p>Nuevo en PractiMatch? <router-link to="/RegistroEstudiante"> Registrate aqui</router-link></p>
          </div>
     </div>
   
@@ -71,7 +71,6 @@ export default {
     }
     ,
     beforeDestroy() {
-
         document.body.style.backgroundColor = 'white'; // Cambia esto al color predeterminado
     }
 }

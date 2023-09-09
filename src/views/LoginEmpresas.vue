@@ -13,7 +13,7 @@
             <p> <a href=""> Olvidaste tu contraseña?</a></p>
 
             <button @click="loginSend"> INGRESAR</button>
-            <p>Nuevo en PractiMatch? <a href=""> Registrate aqui</a></p>
+            <p>Nuevo en PractiMatch? <router-link to="/RegistroEmpresa"> Registrate aqui</router-link></p>
         </div>
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contenido">
     <div class="contenedor ">
       <div class="  contendor-img">
         <h2>Esta es tu oportunidad</h2>
@@ -64,18 +64,19 @@
 
 <script>
 export default {
-    created() {
-    // Cambia el color de fondo del body cuando se crea este componente
-    document.body.style.backgroundColor =  '#ABB2B9'; // Cambia esto al color deseado
-  },
-  beforeDestroy() {
-    // Restaura el color de fondo del body cuando se destruye el componente
-    document.body.style.backgroundColor = 'white'; // Cambia esto al color predeterminado
-  }
+ 
 }
 </script>
 
 <style scoped >
+.contenido{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#ABB2B9; 
+}
 
 .contenedor{
   display: flex;
@@ -146,12 +147,24 @@ export default {
 }
 
 @media screen and (max-width:1390px){
+  .contenedor{
+    height: 548px;
+    margin-top: 40px;
+  }
+  .contenedor-formulario{   
+    padding: 40px 60px;
+
+   
+}
   .contendor-img{
     display: none;
   }
   .contenedor-formulario{
     width: 100%;
     margin: 0 auto;
+  }
+  .contenedor-formulario-input{
+    margin-bottom: 13px;
   }
 
 }
