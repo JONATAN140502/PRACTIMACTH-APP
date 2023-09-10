@@ -15,15 +15,15 @@
                 </div>
             </div>
             <div class="card contenedor-card1-botones ">
-                <button>Nueva Publicacion</button>
-                <button >Perfil</button>
-                <button>Mis Match</button>
+                <button >Nueva Publicacion</button>
+                <button @click="cambiopagina('perfil')">Perfil</button>
+                <button @click="cambiopagina('match')">Mis Match</button>
               
             </div>
         </div>
         <div class="card contenedor-card2">
             <h5>Ofertas Publicas</h5>
-            <div class="d-flex">
+            <div class="texto">
                 <div > 
                     <div>
                         <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
@@ -35,13 +35,18 @@
                     <p>2023-09-08</p>
 
                 </div>
-                <div>
+                <div class="d-flex">
                     <img src="../../assets/work.png" alt="">
+                    <div class="">
+                        <p>Modalidad: Presencial </p>
+                        <p>Vacantes: 10</p>
+                        <button>Hacer Match</button>
+                    </div>
                 </div>
 
             </div>
-            <div class="d-flex">
-                <div> 
+            <div class="texto">
+                <div > 
                     <div>
                         <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -52,11 +57,17 @@
                     <p>2023-09-08</p>
 
                 </div>
-                <div>
+                <div class="d-flex">
                     <img src="../../assets/work.png" alt="">
+                    <div class="">
+                        <p>Modalidad: Presencial </p>
+                        <p>Vacantes: 10</p>
+                        <button>Hacer Match</button>
+                    </div>
                 </div>
 
             </div>
+           
             
         </div>
     </div>
@@ -65,7 +76,17 @@
 
 <script>
 export default {
-
+    data(){
+    return{
+      page:null
+    }
+   },
+   methods:{
+       cambiopagina(page){
+        this.$emit('cambiopagina',page)
+       
+       }
+   }
 }
 </script>
 
@@ -113,15 +134,36 @@ export default {
  .contenedor-card1-botones button:hover{
     background:#F2F3F4 ;
  }
- .contenedor-card2 .d-flex{
+ .contenedor-card2 .texto{
     justify-content: space-between;
     border-top: 0.5px solid #000000;
     padding-top: 15px;
     flex-wrap: wrap;
+    padding-bottom: 15px;
  }
  .contenedor-card2 h5{
     margin-bottom: 15px;
  }
-
-
+ .contenedor-card2 .d-flex{
+    justify-content: space-between;
+ }
+ .contenedor-card2 .d-flex p{
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 400;
+ }
+ .contenedor-card2 .d-flex img{
+    width: 80px;
+ }
+ .contenedor-card2 .d-flex button{
+    border:none;
+    background:red ;
+    width: 150px;
+    color:white;
+    border-radius: 5px;
+ }
+ .contenedor-card2 p{
+    text-align: justify;
+    font-weight: 400;
+ }
 </style>
