@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h2 class="contenedor">
-        Bienvenido a PractiMacth
-    </h2>
+  <div class="contenedor">
+    <h3 >
+        Hola bienvenidos a practiMach
+    </h3>
   </div>
 </template>
 

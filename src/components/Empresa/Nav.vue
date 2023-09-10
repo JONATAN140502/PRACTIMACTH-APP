@@ -26,6 +26,7 @@ export default {
     .contenedor{
       font-family: 'Open Sans', sans-serif;
       box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.60);
+    
     }
 
     .contenedor-img{

@@ -1,9 +1,9 @@
 <template>
     <div>
-      <div class="contenedor d-flex">
-        <Menu class="menu" @cambiopagina="cambiopagina"/>
+      <div class="contenedor ">
+        <Menu class="menu position-fixed " @cambiopagina="cambiopagina"/>
         <div class="contenedor-nav-main">
-          <Nav />
+          <Nav class="sticky-top" />
           <Main v-if="page=='inicio'"  />
           <Perfil v-if="page=='perfil'"  />
           <Oferta v-if="page=='oferta'"  />
@@ -52,14 +52,18 @@ export default {
 
 <style scoped>
 .contenedor{
-  width: 100%;
+  background:#F2F3F4 ;
+  height: 100vh;
 }
+
 .menu{
   width: 16%;
-  
 }
+
 .contenedor-nav-main{
+  margin-left: 16%;
   width: 84%;
+  height: 100%;
 }
 
  
