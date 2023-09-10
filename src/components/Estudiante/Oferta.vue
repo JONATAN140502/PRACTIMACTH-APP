@@ -6,23 +6,22 @@
             <div class="card contenedor-card1-texto">
                 <div class="d-flex">  
                     <div>
-                        <h3>Empresa Soft</h3>
-                        <p>20484850632</p>
+                        <h3>Luis Fernando</h3>
+                        <p>73336257</p>
                     </div>
                     <div>
-                        <img src="../../assets/empresa.png" alt="">
+                        <img src="../../assets/educacion.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="card contenedor-card1-botones ">
-                <button >Nueva Publicacion</button>
                 <button @click="cambiopagina('perfil')">Perfil</button>
-                <button @click="cambiopagina('match')">Mis Match</button>
+                <button >Mis Postulaciones</button>
               
             </div>
         </div>
         <div class="card contenedor-card2">
-            <h5>Ofertas Publicadas</h5>
+            <h5>Ofertas que encajan con tu Perfil</h5>
             <div class="texto">
                 <div > 
                     <div>
@@ -40,7 +39,7 @@
                     <div class="">
                         <p>Modalidad: Presencial </p>
                         <p>Vacantes: 10</p>
-                        <button>Hacer Match</button>
+                        <button>Ver informacion</button>
                     </div>
                 </div>
 
@@ -172,5 +171,8 @@ export default {
  }
  .texto p{
     font-size: 14px;
+ }
+ .contenedor-card1-texto img{
+    width: 80px;
  }
 </style>

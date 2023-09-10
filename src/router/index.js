@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Empresa/PanelEmpresa.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Estudiante/PanelEstudiante.vue')
   },
   {
     path: '/home',
@@ -46,7 +46,7 @@ const routes = [
   {
     path: '/PanelEstudiante',
     name: 'PanelEstudiante',
-    component: () => import('../views/PanelEstudiante.vue')
+    component: () => import('../views/Estudiante/PanelEstudiante.vue')
   },
   
 ]
