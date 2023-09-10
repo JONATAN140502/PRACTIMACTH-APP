@@ -162,8 +162,15 @@ export default {
     color:white;
     border-radius: 5px;
  }
+ .contenedor-card2 .d-flex button:hover{
+    background:#C0392B ;
+ }
+
  .contenedor-card2 p{
     text-align: justify;
     font-weight: 400;
+ }
+ .texto p{
+    font-size: 14px;
  }
 </style>
