@@ -124,6 +124,10 @@ export default {
     border-bottom: 1px solid #000000;
    
   }
+  .input-flex input:focus{
+    outline: none;
+   
+  }
   .correo{
     margin-bottom: 10px;
   }
@@ -137,6 +141,9 @@ export default {
     width: 100%;
     border: none;
     border-bottom: 1px solid #000000;
+  }
+  .correo input{
+    outline: none;
   }
 
   .card-1 p{
@@ -164,6 +171,9 @@ export default {
     width: 100%;
     border: none;
     border-bottom: 1px solid #000000;
+  }
+  .input-flex-2 input:focus{
+    outline: none;
   }
   .card-boton{
     display: flex; 
