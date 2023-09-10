@@ -28,7 +28,7 @@
                         <a href="#" @click="cambiopagina('perfil')" >Perfil</a>
                     </li>
                     <li>
-                        <a href="#" @click="cambiopagina('oferta')">Mis Oferta de Practicas</a>
+                        <a href="#" @click="cambiopagina('oferta')">Mis Publicaciones</a>
                     </li>
                     <li>
                         <a href="#" @click="cambiopagina('match')"> Mis Macth</a>
