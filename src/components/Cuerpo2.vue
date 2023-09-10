@@ -17,9 +17,11 @@ export default {
    },
    methods:{
        cambiopagina(page){
-        this.$emit('cambiopagina',page)
+        this.$emit('cambiopagina',page),
+        console.log(page)
        }
    }
+   
 }
 </script>
 

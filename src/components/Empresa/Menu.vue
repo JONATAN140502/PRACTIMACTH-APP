@@ -22,19 +22,20 @@
             <div class="contenedor-menu">
                 <ul>
                     <li>
-                        <a href="">Inicio</a>
+                        <a href="#" @click="cambiopagina('inicio')">Inicio</a>
                     </li>
                     <li>
-                        <a href="">Perfil</a>
+                        <a href="#" @click="cambiopagina('perfil')" >Perfil</a>
                     </li>
                     <li>
-                        <a href="">Mis Oferta de Practicas</a>
+                        <a href="#" @click="cambiopagina('oferta')">Mis Oferta de Practicas</a>
                     </li>
                     <li>
-                        <a href=""> Mis Macth</a>
+                        <a href="#" @click="cambiopagina('match')"> Mis Macth</a>
                     </li>
-                    <li>
-                        <a href=""> Cerrar</a>
+                    
+                    <li class="cerrar">
+                        <a href="#"> Cerrar</a>
                     </li>
                 </ul>
                 
@@ -48,12 +49,23 @@
 
 <script >
 export default {
-
+    data(){
+    return{
+      page:null
+    }
+   },
+   methods:{
+       cambiopagina(page){
+        this.$emit('cambiopagina',page)
+       
+       }
+   }
 }
 </script >
 
 <style scoped>
  .contenedor{
+    font-family: 'Open Sans', sans-serif;
    text-align: center;
    background:  #2C3E50;
    padding: 25px 0;
@@ -61,10 +73,10 @@ export default {
    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.60);
  }
  .contenedor-img{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
  }
  .contenedor-img img{
-    height: 100px;
+    height: 70px;
 
  }
  .contenedor-perfil{
@@ -104,7 +116,7 @@ export default {
     padding: 0;
  }
  .contenedor-menu ul li{
-    padding: 7px 0px;
+    padding: 15px 0px;
     text-align: left;
  }
  .contenedor-menu ul li:hover{
@@ -117,5 +129,8 @@ export default {
     color: #FFFFFF;
     display: block;
     padding: 0px 20px;
+    font-weight: 400;
+    font-size: 13px;
  }
+
 </style>

@@ -16,23 +16,15 @@
           </div>
 
           <div>
-            <label for=""> NOMBRE: </label>
+            <label for=""> NOMBRE Y APELLIDOS: </label>
             <input type="text">
           </div>
           <div>
-            <label for=""> APELLIDOS: </label>
+            <label for=""> CORREO: </label>
             <input type="text">
           </div>
           <div>
-            <label for=""> CODIGO: </label>
-            <input type="text">
-          </div>
-          <div>
-            <label for=""> CORREO </label>
-            <input type="text">
-          </div>
-          <div>
-            <label for=""> HABILIDADES </label>
+            <label for=""> TELEFONO: </label>
             <input type="text">
           </div>
           <div>
@@ -40,7 +32,12 @@
             <input type="text">
           </div>
           <div>
-            <label for=""> USUARIO </label>
+            <label for=""> USUARIO</label>
+            <input type="text">
+          </div>
+          
+          <div>
+            <label for=""> CONTRASEÑA </label>
             <input type="text">
           </div>
           <div>

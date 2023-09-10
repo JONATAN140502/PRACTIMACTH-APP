@@ -14,6 +14,7 @@ export default {
 
 <style scoped>
   .contenedor{
+    font-family: 'Open Sans', sans-serif;
     padding: 20px 50px;
   }
 </style>

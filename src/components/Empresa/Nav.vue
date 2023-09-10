@@ -45,5 +45,6 @@ export default {
      }
      .contenedor-texto p{
       margin-bottom: 0px;
+      font-weight: 300;
      }
 </style>
