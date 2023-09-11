@@ -23,10 +23,6 @@
             <label for=""> NOMBRE COMERCIAL: </label>
             <input type="text">
           </div>
-          <div>
-            <label for=""> DIRECCION: </label>
-            <input type="text">
-          </div>
           
           <div>
             <label for=""> CORREO: </label>
@@ -36,12 +32,6 @@
             <label for=""> USUARIO</label>
             <input type="text">
           </div>
-
-          <div class="">
-            <label for=""> CONTRASEÑA: </label>
-            <input type=" text">
-          </div>
-          
           <div>
             <label for=""> CONTRASEÑA</label>
             <input type=" password">

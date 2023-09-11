@@ -30,16 +30,7 @@
             <input type="text">
           </div>
           <div>
-            <label for=""> CICLO </label>
-            <input type="text">
-          </div>
-          <div>
             <label for=""> USUARIO</label>
-            <input type="text">
-          </div>
-          
-          <div>
-            <label for=""> CONTRASEÑA </label>
             <input type="text">
           </div>
           <div>
