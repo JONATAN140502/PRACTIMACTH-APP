@@ -7,9 +7,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     //LOCAL
-  url:"http://practi-back.test/api", 
+  // url:"http://practi-back.test/api", 
   //NUBE BACK
-  //url:"http://35.234.245.121/api",
+  url:"http://35.234.245.121/api",
     token:null,
     user: {
       id: null,
