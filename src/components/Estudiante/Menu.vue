@@ -31,7 +31,7 @@
                         <a href="#" @click="cambiopagina('oferta')"  >Match Recibidos</a>
                     </li>
                     <li>
-                        <a href="#"  >Mis Postulaciones</a>
+                        <a href="#"  @click="cambiopagina('match')" >Mis Postulaciones</a>
                     </li>
                     <li class="cerrar">
                         <a href="#"> Cerrar</a>

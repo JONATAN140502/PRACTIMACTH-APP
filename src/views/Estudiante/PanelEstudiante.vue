@@ -7,7 +7,7 @@
           <Main v-if="page=='inicio'"  />
           <Perfil v-if="page=='perfil'"  />
           <Oferta v-if="page=='oferta'"  @cambiopagina="cambiopagina" />
-          
+          <Match v-if="page=='match'"  @cambiopagina="cambiopagina" />
         </div>
      
       </div>
@@ -22,7 +22,7 @@ import Menu from '../../components/Estudiante/Menu.vue'
 import Main from '../../components/Estudiante/Main.vue'
 import Perfil from '../../components/Estudiante/Perfil.vue'
 import Oferta from '../../components/Estudiante/Oferta.vue'
-
+import Match from '../../components/Estudiante/Macth.vue'
 export default {
  name:'PanelEmpresa',
  components:{
@@ -30,7 +30,8 @@ export default {
    Menu,
    Main,
    Perfil,
-   Oferta
+   Oferta,
+   Match
  
  },
       data(){

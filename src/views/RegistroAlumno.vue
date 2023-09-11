@@ -14,15 +14,17 @@
             <label for=""> DNI </label>
             <input type="text">
           </div>
-
           <div>
             <label for=""> NOMBRE Y APELLIDOS: </label>
             <input type="text">
           </div>
-          <div>
+         
+          
+          <div class="correo">
             <label for=""> CORREO: </label>
             <input type="text">
           </div>
+          
           <div>
             <label for=""> TELEFONO: </label>
             <input type="text">
@@ -44,8 +46,9 @@
             <label for=""> CONTRASEÑA</label>
             <input type=" password">
           </div>
-
+          
         </div>
+        
 
         <button type="button"> Crear Cuenta </button>
 
@@ -104,12 +107,13 @@ export default {
 }
 .contenedor-formulario-input{
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     flex-wrap: wrap;
     margin-bottom: 50px;
 }
 .contenedor-formulario-input input{
     margin-bottom: 20px;
+    
 }
 .contenedor-formulario label{
     display: block;
@@ -142,6 +146,7 @@ export default {
   font-weight: 300;
   margin-bottom: 10px;
 }
+
 
 @media screen and (max-width:1390px){
   .contenedor{

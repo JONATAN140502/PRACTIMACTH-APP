@@ -1,9 +1,9 @@
 <template>
   <div class="contenedor">
-    <h4>Macth de la Empresa</h4>
+    <h4>Macth del Estudiante</h4>
     <div class="contenedor-card d-flex">
       <div class="card  contenedor-card1">
-           <h5>Mis Match</h5>
+           <h5>Mis Postulaciones</h5>
            <div >
             <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -12,7 +12,7 @@
               dolor minus alias, libero soluta, voluptatum magni nam!
             </p>   
             <p>2023-09-08</p> 
-            <button >Ver Macth</button>            
+            <button >Ver Informacion</button>            
            </div>
            <div >
             <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
@@ -22,18 +22,18 @@
               dolor minus alias, libero soluta, voluptatum magni nam!
             </p>   
             <p>2023-09-08</p> 
-            <button >Ver Macth</button>            
+            <button >Ver Informacion </button>            
            </div>
     
       </div>
       <div class="card contenedor-card2">
-        <h5>  Publicaciones de Ofertas</h5>
-        <img src="../../assets/cierre.png" alt="" class="mx-auto">
-        <p>¡ crear o edita tus ofertas de prácticas con Practimatch! 
-          Y nos encargaremos de descubrir y atraer a jóvenes talentos prometedores que encajen perfectamente 
-          con tus ofertas de prácticas.
+        <h5> Configura tu Perfil</h5>
+        <img src="../../assets/perfil.png" alt="" class="mx-auto">
+        <p> ¡Estás a punto de convertirte en un candidato excepcional!. 
+          Las empresas valoran tus habilidades de manera muy positiva.
+           Ahora es el momento de perfeccionar tu perfil y resaltar tus Habilidades.
         </p>
-        <button>Crear Publicacion</button>
+        <button @click="cambiopagina('perfil')" >Mejorar Perfil</button>
       </div>
 
     </div>
@@ -42,7 +42,17 @@
 
 <script>
 export default {
-
+  data(){
+    return{
+      page:null
+    }
+   },
+   methods:{
+       cambiopagina(page){
+        this.$emit('cambiopagina',page)
+       
+       }
+   }
 }
 </script>
 
@@ -69,7 +79,7 @@ export default {
  .contenedor-card2{
   width: 29%;
   padding:20px 30px;
-  height: 350px;
+  height: 395px;
  }
  .contenedor-card1 h5{
   margin-bottom: 15px;
@@ -99,6 +109,8 @@ export default {
  .contenedor-card2 img{
     width: 120px;
     height: 120px;
+    margin-bottom: 10px;
+    margin-top: 10px;
  }
  .contenedor-card2 p{
   font-size: 13px;

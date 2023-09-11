@@ -24,11 +24,21 @@
             <input type="text">
           </div>
           <div>
+            <label for=""> DIRECCION: </label>
+            <input type="text">
+          </div>
+          
+          <div>
             <label for=""> CORREO: </label>
             <input type="text">
           </div>
+          <div>
+            <label for=""> USUARIO</label>
+            <input type="text">
+          </div>
+
           <div class="">
-            <label for=""> DESCRIPCION: </label>
+            <label for=""> CONTRASEÑA: </label>
             <input type=" text">
           </div>
           
