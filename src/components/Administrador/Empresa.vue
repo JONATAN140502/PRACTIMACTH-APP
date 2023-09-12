@@ -1,0 +1,92 @@
+<template>
+  <div class="contenedor">
+     <div class="contenedor-texto">
+        <h4 class="d-inline ">Lista de Empresas </h4>
+        <button class="float-end" ><i class="fas fa-plus"></i> Nueva Empresa</button>
+     </div>
+     <div class="card mt-4">
+      <div class="card-body p-3">
+        <table id="datatable" class="table ">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">DNI</th>
+              <th scope="col">NOMBRES Y APELLIDOS</th>
+              <th scope="col">TELEFONO</th>
+              <th scope="col">CORREO</th>
+                <th scope="col">ESTADO</th>
+              <th scope="col">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td >73336257</td>
+              <td >Luis Fernando Mechan LLontop</td>
+              <td >937398743</td>
+              <td >Luis@gmail.com</td>
+              <td >Activo</td>
+              <td >botones</td>
+
+            </tr>
+              
+          </tbody>
+        </table>
+      </div>
+
+     </div>
+ 
+    
+    
+  </div>
+</template>
+
+<script>
+
+
+export default {
+  mounted() {
+    $('#datatable').DataTable( {
+               "ordering": false,
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ Registros por paginas",
+                    "zeroRecords": "Nada encontrado - disculpa",
+                    "info": "Mostrando la pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay datos a mostrar",
+                    "infoFiltered": "(Filtrado de _MAX_ Registros Totales)",
+                    "search":"Buscar:",
+                    "paginate":{
+                        "next":"Siguiente",
+                        "previous":"Anterior"
+                    }
+                    
+                }
+               
+            } );
+    }
+
+};
+</script>
+
+<style scoped>
+.contenedor{
+    font-family: 'Open Sans', sans-serif;
+    padding: 25px 40px;
+ }
+ .contenedor h4{
+    color: #1F618D;
+   
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+  .contenedor-texto{
+    border-bottom: 1px solid #1F618D;
+    padding-bottom: 15px ;
+  }
+  .contenedor-texto button{
+    border: none;
+    background:  #1F618D;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 8px;
+  }
+
+</style>
