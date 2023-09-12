@@ -1,17 +1,17 @@
 <template>
   <div class="contenedor">
-     <div class="contenedor-texto">
-        <h4 class="d-inline ">Lista de Empresas </h4>
-        <button class="float-end" ><i class="fas fa-plus"></i> Nueva Empresa</button>
-     </div>
-     <div class="card mt-4">
+    <div class="contenedor-texto">
+      <h4 class="d-inline ">Lista de Empresas </h4>
+      <button class="float-end" ><i class="fas fa-plus"></i> Nueva Empresa</button>
+    </div>
+    <div class="card mt-4">
       <div class="card-body p-4">
         <table id="datatable" class="table">
           <thead class="table-secondary ">
             <tr class="">
-              <th scope="col">DNI</th>
-              <th scope="col">NOMBRES Y APELLIDOS</th>
-              <th scope="col">TELEFONO</th>
+              <th scope="col">RUC</th>
+              <th scope="col">RAZON SOCIAL</th>
+              <th scope="col">NOMBRE COMERCIAL</th>
               <th scope="col">CORREO</th>
               <th scope="col">ESTADO</th>
               <th scope="col">ACCIONES</th>
@@ -40,7 +40,7 @@
         </table>
       </div>
 
-     </div>
+    </div>
  
     
     
