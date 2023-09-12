@@ -5,19 +5,28 @@
         <button class="float-end" ><i class="fas fa-plus"></i> Nueva Empresa</button>
      </div>
      <div class="card mt-4">
-      <div class="card-body p-3">
-        <table id="datatable" class="table ">
-          <thead class="thead-light">
-            <tr>
+      <div class="card-body p-4">
+        <table id="datatable" class="table">
+          <thead class="table-secondary ">
+            <tr class="">
               <th scope="col">DNI</th>
               <th scope="col">NOMBRES Y APELLIDOS</th>
               <th scope="col">TELEFONO</th>
               <th scope="col">CORREO</th>
-                <th scope="col">ESTADO</th>
+              <th scope="col">ESTADO</th>
               <th scope="col">ACCIONES</th>
             </tr>
           </thead>
           <tbody>
+            <tr class="">
+              <td >73336257</td>
+              <td >Luis Fernando Mechan LLontop</td>
+              <td >937398743</td>
+              <td >Luis@gmail.com</td>
+              <td >Activo</td>
+              <td >botones</td>
+
+            </tr>
             <tr>
               <td >73336257</td>
               <td >Luis Fernando Mechan LLontop</td>
@@ -27,7 +36,6 @@
               <td >botones</td>
 
             </tr>
-              
           </tbody>
         </table>
       </div>
@@ -88,5 +96,6 @@ export default {
     color: white;
     border-radius: 8px;
   }
+  
 
 </style>
