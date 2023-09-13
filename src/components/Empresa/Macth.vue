@@ -9,7 +9,7 @@
             <p>{{ item.descripcion }}
             </p>   
             <p>{{item.date}}</p> 
-            <button @click="mtdListStudent(item.id)" >Ver Macth</button>            
+            <button @click="mtdListStudent(item.id, item.name)" >Ver Match</button>            
            </div>
     
       </div>
@@ -23,18 +23,18 @@
         <button @click="cambiopagina('publicacion')">Crear Publicacion</button>
       </div>
     <div class="card contenedor-card3 " v-if="mostrarMatch">
-      <h5>Estudiantes que hicieron Match</h5>
-        <div>
-          <h5>Gloria Noelia Loro Ayala</h5>
-          <p><strong>DNI:</strong> 75555555555</p>
-          <p><strong>CICLO:</strong> X</p>
-          <p><strong>FACULTAD:</strong> FICSA</p>
-          <p><strong>ESCUELA:</strong> Ingeneria de sistemas</p>
-          <p><strong>CODIGO:</strong> 1584555A</p>
-          <p><strong>CORREO:</strong> GL@GMAIL.COM</p>
-          <p><strong>TELEFONO:</strong> 999999999</p>
-          <p><strong>HABILIDADES:</strong> Comunicacion, liderazgo</p>
+      <h5>Esto es un Match con {{ namePractice }} </h5>
+        <div v-for="item in dataStudent">
+          <h5>{{item.name}} {{ item.last_name }}</h5>
+          <p><strong>CICLO:</strong> {{ item.cicle }}</p>
+          <p><strong>FACULTAD:</strong> {{ item.faculty_name }}</p>
+          <p><strong>ESCUELA:</strong> {{ item.school_name }}</p>
+          <p><strong>CODIGO:</strong> {{ item.code }}</p>
+          <p><strong>CORREO:</strong> {{ item.correo}}</p>
+          <p><strong>TELEFONO:</strong> {{ item.phone }}</p>
+          <p><strong>HABILIDADES:</strong> {{ item.skills }}</p>
         </div>
+        
     </div>
       
     </div>
@@ -51,6 +51,7 @@ export default {
       page:null,
       dataStudent:[],
       dataPractices:[],
+      namePractice:null,
       filter:{
         valueFilter: null,
         labelFilter: "id_company",
@@ -81,7 +82,8 @@ export default {
             })
                 .catch((errors) => { });
         },
-        mtdListStudent:function(id){
+        mtdListStudent:function(id, name){
+          this.namePractice=name;
           if (this.firstClick) {
           this.mostrarMatch = !this.mostrarMatch;
           this.firstClick = false;}
