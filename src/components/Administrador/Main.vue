@@ -1,8 +1,19 @@
 <template>
   <div class="contenedor">
-    <h3 >
-        Hola bienvenidos a practiMach
-    </h3>
+    <div class="d-flex">
+         <div class="card  "  style="background:#BB8FCE  ;">
+          hola
+         </div>
+         <div class="card" style="background:#BB8FCE  ;" >
+          hola
+         </div>
+         <div class="card" style="background:#BB8FCE  ;" >
+          hola
+         </div>
+         <div class="card" style="background:#BB8FCE  ;" >
+          hola
+         </div>
+    </div>
   </div>
 </template>
 
