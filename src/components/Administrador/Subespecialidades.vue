@@ -40,7 +40,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content col-sm-11 p-">
                     <div class="modal-header mod-h  ">
-                      <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"><i class="fas fa-user"></i> Nuevo Cliente</h4>
+                      <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"><i class="fas fa-bring-forward"></i> Nueva SubEspecialidad</h4>
                       <div style="border: none ;cursor: pointer;" class="close text-white mr-2"  data-bs-dismiss="modal" aria-label="Close">
                         &times;
                       </div>
@@ -48,51 +48,34 @@
                     </div>                  
                     <div class="modal-body ">
                       <div class="form-row d-flex mb-3">
-                        <div class="form-group ">
-                          <label for="inputtext">Dni:</label>
+                        <div class="form-group col-12">
+                          <label for="inputtext">Nombre:</label>
                           <div class="input-group">
-                              <input type="text" class="form-control"   placeholder="Dni" required>
-                          </div>
-                        </div>
-                         <div class="form-group ">
-                          <label for="inputtext">Nombre y Apellidos</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control"  placeholder="Nombres y Apellidos" required>
+                              <input type="text" class="form-control"   placeholder="Ingrese el nombre" required>
                           </div>
                         </div>
 
                       </div>
                       <div class="form-row d-flex mb-3">
-                        <div class="form-group ">
-                          <label for="inputtext">Correo:</label>
+                        <div class="form-group col-12">
+                          <label for="inputtext">SubEspecialidad: </label>
                           <div class="input-group">
-                              <input type="text" class="form-control"   placeholder="Correo" required>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected disabled>Escoga una opcion</option>
+                              <option value="1">Tecnologia</option>
+                            </select>
                           </div>
                         </div>
-                         <div class="form-group ">
-                          <label for="inputtext">Telefono</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control"  placeholder="Telefono" required>
-                          </div>
-                        </div>
-
                       </div>
                       <div class="form-row d-flex mb-3">
-                        <div class="form-group ">
-                          <label for="inputtext">Usuario:</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control"   placeholder="Usuario" required>
-                          </div>
-                        </div>
-                         <div class="form-group ">
-                          <label for="inputtext">Contraseña</label>
-                          <div class="input-group">
-                              <input type="password" class="form-control"  placeholder="Contraseña" required>
-                          </div>
+                        <div class="form-group col-12">
+                          <label for="inputtext">Descripcion:</label>
+                          <textarea class="form-control" id="input-descripcion" rows="3" placeholder="Ingrese la descripcion"></textarea>
                         </div>
 
+
                       </div>
-                         
+   
                        
                         
 
@@ -159,6 +142,9 @@ export default {
   .btn-1{
     background: #1F618D;
     width: 100%;
+}
+.input-descripcion{
+  resize: none;
 }
 .btn-1:hover{
     background:#2A7EB6   ;
