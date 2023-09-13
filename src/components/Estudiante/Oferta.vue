@@ -221,14 +221,14 @@ export default {
 
 .contenedor-card2 .d-flex button {
    border: none;
-   background: red;
+   background: #1F618D;
    width: 150px;
    color: white;
    border-radius: 5px;
 }
 
 .contenedor-card2 .d-flex button:hover {
-   background: #C0392B;
+   background: #1A5276;
 }
 
 .contenedor-card2 p {
