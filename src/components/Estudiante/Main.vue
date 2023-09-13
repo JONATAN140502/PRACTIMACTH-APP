@@ -44,7 +44,7 @@ export default {
    
   }
   .contenedor div .card{
-    width: 24%;
+    width: 32%;
     height: 200px;
     border: none;
     
