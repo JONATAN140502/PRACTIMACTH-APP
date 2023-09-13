@@ -1,7 +1,7 @@
 <template>
   <div class="contenedor">
     <h3 >
-        Hola bienvenidos a practiMach
+        Hola bienvenidos a PractiMatch
     </h3>
   </div>
 </template>

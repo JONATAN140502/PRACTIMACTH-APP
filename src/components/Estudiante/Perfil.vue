@@ -84,18 +84,90 @@
            </div>
             
            <div class="card contenedor-card2">
-            <h5> Configura tu Perfil</h5>
+            <h5> Configura tus Habilidades</h5>
             <img src="../../assets/perfil.png" alt="" class="mx-auto">
-            <p> ¡Estás a punto de convertirte en un candidato excepcional!. 
+            <p>  
               Las empresas valoran tus habilidades de manera muy positiva.
               Ahora es el momento de perfeccionar tu perfil y resaltar tus Habilidades.
             </p>
-            <button @click="cambiopagina('perfil')" >Mejorar Perfil</button>
+            <button  data-bs-toggle="modal" data-bs-target="#nuevo" >Añadir Habilidades</button>
           </div>
 
          </div>
 
       </div>
+       <!--modal-->
+    
+     <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content col-sm-11 p-">
+                    <div class="modal-header mod-h  ">
+                      <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"> Configurar Habilidades</h4>
+                      <div style="border: none ;cursor: pointer;" class="close text-white mr-2"  data-bs-dismiss="modal" aria-label="Close">
+                        &times;
+                      </div>
+                    
+                    </div>                  
+                    <div class="modal-body ">
+                      <div class="form-row d-flex mb-3">
+                        <div class="form-group ">
+                          <label for="inputtext">Areas:</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                         <div class="form-group ">
+                          <label for="inputtext">Especialidades</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+
+                      </div>
+                      <div class="form-row  mb-3">
+                        <div class="form-group ">
+                          <label for="inputtext" class="mb-2">Subespecialidades:</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        
+
+                      </div>
+                      <div class=" habilidades ">
+                        <label for="inputtext" class="mb-2"  style="display: block;">Habilidades:</label>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">PHP</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                          <label class="form-check-label" for="inlineCheckbox2">JAVA</label>
+                        </div>
+                      </div>
+                      
+                         
+                       
+                        
+
+                      <button  class="btn  btn-block mt-4 mb-4 btn-1 text-white" >Añadir</button>
+                                          
+                        
+                    </div>
+                    
+                 
+                  </div>
+                </div>
+    </div>
       
   </div>
 </template>
@@ -171,6 +243,9 @@ export default {
 </script>
 
 <style scoped>
+.d-flex select{
+  width: 215px;
+}
   .contenedor{
     font-family: 'Open Sans', sans-serif;
     padding: 25px 40px;
@@ -331,5 +406,26 @@ export default {
   padding:20px 30px;
   height: 395px;
  }
+ .btn-1{
+    background: #1F618D;
+    width: 100%;
+}
+.btn-1:hover{
+    background:#2A7EB6   ;
+}
+.mod-h{
+    background: #1F618D;
+    padding: 8px 40px 15px 40px;
+}
+.modal-body .d-flex {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.modal-body .d-flex label{
+ margin-bottom: 8px;
+}
+.modal-body{
+  padding: 30px;
+}
 
 </style>
