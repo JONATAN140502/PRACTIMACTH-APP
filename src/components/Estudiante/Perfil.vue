@@ -134,27 +134,25 @@
                       <div class="form-row  mb-3">
                         <div class="form-group ">
                           <label for="inputtext" class="mb-2">Subespecialidades:</label>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
+                          <select class="form-select" name="subSpecialty" id="subSpecialty" aria-label="Default select example"
+                v-model="filter.subspecialty" @change="mtdSelectSubspecialty">
+                <option disabled selected value="">Seleccione ...</option>
+                <option v-for="(item, index) in subspecialties" :key="index" :value="item.id">
+                  {{ item.name }}
+                </option>
+              </select>
                         </div>
                         
 
                       </div>
-                      <div class=" habilidades ">
-                        <label for="inputtext" class="mb-2"  style="display: block;">Habilidades:</label>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                          <label class="form-check-label" for="inlineCheckbox1">PHP</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                          <label class="form-check-label" for="inlineCheckbox2">JAVA</label>
-                        </div>
-                      </div>
+                      <!--Palabras claves-->
+          <div>
+            <label>Habilidades</label> <br>
+            <div class="form-check form-check-inline" v-for="(item,index) in knowledges">
+              <input class="form-check-input" type="checkbox"  v-model="knowledges" v-bind:value="item.id" :key="index" />
+              <label class="form-check-label" >{{item.name}}</label>
+            </div>
+          </div>
                       
                          
                        
