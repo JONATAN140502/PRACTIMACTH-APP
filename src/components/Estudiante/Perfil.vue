@@ -180,7 +180,7 @@ export default {
       areas: [],
       specialties: [],
       subspecialties: [],
-      
+      knowledges:[],
       student: {
         id: this.$store.getters.get__student.id,
         name:"",
@@ -294,7 +294,7 @@ export default {
               //timer: 2000
               confirmButtonColor: "rgb(170, 2, 95)",
             });
-            modal.hidden();
+            //modal.hidden();
           } else {
           }
         })
