@@ -6,31 +6,48 @@
          <div class="card card-1">
            <h5>Datos Personales</h5>
            <div class="card-input">
-             <div  class="d-flex input-flex">
-                <div  class="" >
+                <div  class="correo" >
                   <label for="">Nombre y Apellidos:</label>
                   <input type=" text">
                 </div>
+             <div  class="d-flex input-flex">
                 <div  class="">
                   <label for="">Dni:</label>
                   <input type=" text">
                 </div>
+                <div  class="">
+                  <label for="">Codigo:</label>
+                  <input type=" text">
+                </div>
              </div>
              <div class="d-flex input-flex" >
+                
                 <div>
-                  <label for="">Ciclo:</label>
+                  <label for="">Ciclo Academico:</label>
                   <input type=" text">
                 </div>
                 <div>
+                  <label for="">Escuela Profesional:</label>
+                  <input type=" text">
+                </div>
+
+             </div>
+              <div class="d-flex input-flex" >
+                <div>
                   <label for="">Telefono:</label>
                   <input type=" text">
-              </div>
+                </div>
+                <div class="correo">
+                  <label for="">Correo:</label>
+                  <input type=" text">
+                </div>
              </div>
             
              <div class="correo">
-                <label for="">Correo:</label>
-                <input type=" text">
+                  <label for="">Usuario:</label>
+                  <input type=" text">
              </div>
+
            </div>
            <h5>Cambiar Contraseña</h5>
            <p>Para actualizar la contraseña de esta cuenta debera ingresar la contraseña actual, 
@@ -75,7 +92,7 @@ export default {
 </script>
 
 <style scoped>
-.contenedor{
+  .contenedor{
     font-family: 'Open Sans', sans-serif;
     padding: 25px 40px;
   }
