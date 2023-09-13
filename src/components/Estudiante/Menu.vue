@@ -54,8 +54,7 @@ export default {
     }
    },
    created() {
-    this.user = this.$store.getters.get__company.name;
-    this.ruc = this.$store.getters.get__company.ruc;
+    this.user = this.$store.getters.get__student.name;
   },
    methods:{
        cambiopagina(page){
