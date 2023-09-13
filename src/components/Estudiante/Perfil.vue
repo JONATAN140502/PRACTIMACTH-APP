@@ -49,7 +49,7 @@
             
              <div class="correo">
                   <label for="">Usuario:</label>
-                  <input type=" text">
+                  <input id="user_name" name="user_name" type=" text" v-model="student.user_name" />
              </div>
 
            </div>
