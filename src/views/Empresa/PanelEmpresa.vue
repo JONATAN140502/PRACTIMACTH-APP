@@ -8,7 +8,8 @@
           <Perfil v-if="page=='perfil'"  />
           <Oferta v-if="page=='oferta'"  @cambiopagina="cambiopagina" />
           <Match v-if="page=='match'"   @cambiopagina="cambiopagina"/>
-       
+          <Publicacion v-if="page=='publicacion'"   @cambiopagina="cambiopagina"/>
+          
 
         </div>
      
