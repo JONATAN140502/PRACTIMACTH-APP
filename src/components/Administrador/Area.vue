@@ -1,72 +1,41 @@
 <template>
   <div class="contenedor">
     <div class="contenedor-texto">
-      <h4 class="d-inline ">Lista de Estudiantes</h4>
-      <button class="float-end"   data-bs-toggle="modal" data-bs-target="#nuevo"><i class="fas fa-plus"></i> Nuevo Estudiante</button>
+      <h4 class="d-inline ">Lista de Areas </h4>
+      <button class="float-end"  data-bs-toggle="modal" data-bs-target="#nuevo" ><i class="fas fa-plus"></i> Nueva Area</button>
     </div>
     <div class="card mt-4">
       <div class="card-body p-4">
         <table id="datatable" class="table scroll-table nowrap py-3 ">
-          <thead class="table-secondary ">
+          <thead class="table-secondary  ">
             <tr class="">
-              <th scope="col" >DNI</th>
-              <th scope="col">CODIGO UNIVERSITARIO</th>
-              <th scope="col">NOMBRES Y APELLIDOS</th>
-              <th scope="col">TELEFONO</th>
-              <th scope="col">CORREO</th>
-              <th scope="col">ESCUELA</th>
-              <th scope="col">CICLO ACADEMICO</th>
-              <th scope="col">USUARIO</th>
-              <th scope="col">CONTRASEÑA</th>
+              <th scope="col">NOMBRE</th>
+              <th scope="col" class="text-center" >DESCRIPCION</th>
               <th scope="col">ESTADO</th>
               <th scope="col">ACCIONES</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="">
-              <td >73336257</td>
-              <td >184520E</td>
-              <td >Luis Fernando Mechan LLontop</td>
-              <td >937398743</td>
-              <td >Luis@gmail.com</td>
-              <td >FICSA</td>
-              <td >DECIMO CICLO</td>  
-              <td >FICSA</td>
-              <td >DECIMO CICLO</td>  
+            <tr >
+              <td >Tecnologia</td>
+              <td >Incluye el desarrollo de software, el diseño web, la ciberseguridad, la administración de bases de datos</td>
               <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
-              <td  class="px-0 py-2" >
-                <button type="button" class="btn btn-warning btn-icon me-1 " data-bs-toggle="modal" data-bs-target="#nuevo"><i class="fas fa-edit" ></i></button> 
-                <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button>
+              <td class=" px-0 py-2">
+                <button type="button" class="btn btn-warning btn-icon"  data-bs-toggle="modal" data-bs-target="#nuevo"><i class="fas fa-edit"></i>
+                </button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button>
               </td>
 
             </tr>
-            <tr>
-              <td >73336257</td>
-              <td >184520E</td>
-              <td >Luis Fernando Mechan LLontop</td>
-              <td >937398743</td>
-              <td >Luis@gmail.com</td>
-              <td >FICSA</td>
-              <td >DECIMO CICLO</td>  
-              <td >FICSA</td>
-              <td >DECIMO CICLO</td>  
-              <td ><button type="button" class="btn btn-success btn-icon" >Activo</button></td>
-              <td class="px-0 py-2">
-                <button type="button"  class="btn btn-warning btn-icon  me-1" data-bs-toggle="modal" data-bs-target="#nuevo"><i class="fas fa-edit" ></i> </button>
-                 <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button>
-              </td>
-
-            </tr>
+           
           </tbody>
         </table>
       </div>
 
     </div>
+   
 
-
-
-    <!--modal-->
-    <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!--modal-->
+      <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content col-sm-11 p-">
                     <div class="modal-header mod-h  ">
@@ -135,7 +104,10 @@
                   </div>
                 </div>
     </div>
+    
+    
   </div>
+
 </template>
 
 <script>
@@ -159,20 +131,21 @@ export default {
                
             } );
     }
+
 }
 </script>
 
-<style  scoped>
-  .contenedor{
-      font-family: 'Open Sans', sans-serif;
-      padding: 25px 40px;
+<style scoped>
+.contenedor{
+    font-family: 'Open Sans', sans-serif;
+    padding: 25px 40px;
+ }
+ .contenedor h4{
+    color: #1F618D;
+   
+    padding-bottom: 15px;
+    margin-bottom: 30px;
   }
-  .contenedor h4{
-      color: #1F618D;
-      padding-bottom: 15px;
-      margin-bottom: 30px;
-  }
-
   .contenedor-texto{
     border-bottom: 1px solid #1F618D;
     padding-bottom: 15px ;
@@ -180,7 +153,7 @@ export default {
   .contenedor-texto button{
     border: none;
     background:  #1F618D;
-    padding: 7px 15px;
+    padding: 6px 15px;
     color: white;
     border-radius: 8px;
   }
@@ -189,9 +162,6 @@ export default {
    
     overflow-x: auto;
 
-  }
-  .contenedor-texto button:hover{
-    background: #154360;
   }
   .btn-1{
     background: #1F618D;

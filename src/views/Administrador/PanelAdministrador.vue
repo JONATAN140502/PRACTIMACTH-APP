@@ -8,6 +8,9 @@
           <Perfil v-if="page=='perfil'"  />
           <Empresa v-if="page=='empresa'"  />
           <Estudiante v-if="page=='estudiante'"  />
+          <Area v-if="page=='area'"  />
+          <Especialidades v-if="page=='especialidades'"  />
+          <Subespecialidades v-if="page=='subespecialidades'"  />
         </div>
      
       </div>
@@ -23,6 +26,9 @@ import Main from '../../components/Administrador/Main.vue'
 import Perfil from '../../components/Administrador/Perfil.vue'
 import Empresa from '../../components/Administrador/Empresa.vue'
 import Estudiante from '../../components/Administrador/Estudiante.vue'
+import Area from '../../components/Administrador/Area.vue'
+import Especialidades from '../../components/Administrador/Especialidades.vue'
+import Subespecialidades from '../../components/Administrador/Subespecialidades.vue'
 
 export default {
  name:'PanelEmpresa',
@@ -32,7 +38,10 @@ export default {
    Main,
    Perfil,
    Empresa,
-   Estudiante
+   Estudiante,
+   Area,
+   Especialidades,
+   Subespecialidades
    
  
  },
