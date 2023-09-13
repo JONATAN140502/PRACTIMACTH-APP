@@ -70,10 +70,8 @@ export default {
       },
       modal: "add",
       filter: {
-        type: "company",
-        valueFilter: this.$store.getters.get__company.id,
         labelFilter: "id_company",
-        id: this.$store.getters.get__company.id,
+        filter: this.$store.getters.get__company.id,
       },
     };
   },
