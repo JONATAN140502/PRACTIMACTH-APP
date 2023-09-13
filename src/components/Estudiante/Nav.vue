@@ -7,7 +7,7 @@
      
       <div class="contenedor-texto">
         <h3>Panel Estudiante </h3>
-        <p>Hola Luis, Bienvenido a PractiMacth</p>
+        <p>Hola {{user}} {{ user_lastname }}, Bienvenido a PractiMacth</p>
       </div>
       
 
@@ -18,7 +18,11 @@
 <script>
 
 export default {
-
+  created() {
+      this.user = this.$store.getters.get__student.name;
+      this.user_lastname = this.$store.getters.get__student.last_name;
+      //this.mtdGetData();
+   },
 }
 </script>
 

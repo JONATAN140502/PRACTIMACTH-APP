@@ -7,17 +7,21 @@
            <h5>Datos Personales</h5>
            <div class="card-input">
                 <div  class="correo" >
-                  <label for="">Nombre y Apellidos:</label>
-                  <input type=" text">
+                  <label for="name">Nombre</label>
+                  <input id="name" name="name" type=" text" v-model="student.name" />
+                </div>
+                <div  class="correo" >
+                  <label for="last_name">Apellido</label>
+                  <input id="last_name" name="last_name" type=" text" v-model="student.last_name" />
                 </div>
              <div  class="d-flex input-flex">
                 <div  class="">
-                  <label for="">Dni:</label>
-                  <input type=" text">
+                  <label for="dni">Dni:</label>
+                  <input id="dni" name="dni" type=" text" v-model="student.dni" />
                 </div>
                 <div  class="">
-                  <label for="">Codigo:</label>
-                  <input type=" text">
+                  <label for="code">Codigo:</label>
+                  <input id="code" name="code" type=" text" v-model="student.code" />
                 </div>
              </div>
              <div class="d-flex input-flex" >
@@ -75,8 +79,8 @@
          <div class="card card-2 text-center">
            <div class=" ">
               <img src="../../assets/educacion.png"  class="mx-auto mb-3 " alt="">
-              <h5 class="text-white mb-2">Luis Fernando</h5>
-              <p class="text-white">Luis@gmail.com</p>
+              <h5 class="text-white mb-2">{{user}}</h5>
+              <p class="text-white">{{student.correo}}</p>
            </div>
          </div>
 
@@ -86,9 +90,73 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
-
-}
+  data() {
+    return {
+      page: null,
+      areas: [],
+      specialties: [],
+      subspecialties: [],
+      knowledges:[],
+      student: {
+        id: this.$store.getters.get__student.id,
+        name:"",
+        last_name:"",
+        address: "",
+        correo: "",
+      },
+      filter: {
+        area: null,
+        specialty: null,
+        subspecialty: null,
+      }
+    };
+  },
+  created() {
+    this.user = this.$store.getters.get__student.name;
+    this.mtdGetData(this.$store.getters.get__student.id);
+  },
+  methods: {
+    ...mapActions(["get", "post"]),
+    mtdGetData: function (id) {
+      this.get({
+        url: this.$store.getters.get__url + "/student/" + id + "/show",
+        token: this.$store.getters.get__token,
+      })
+        .then((response) => {
+          this.student = response.data;
+          //this.areas = response.areas;
+          console.log(response);
+        })
+        .catch((errors) => { });
+    },
+    mtdEditCompay: function () {
+      this.post({
+        url: this.$store.getters.get__url + "/company/update",
+        token: this.$store.getters.get__token,
+        params: this.company,
+      })
+        .then((response) => {
+          if (response.state == 0) {
+            /** todo correto */
+            Swal.fire({
+              title: "Modificación Exitosa",
+              text: "Perfecto!",
+              icon: "success",
+              //showConfirmButton: true,
+              width: "400px",
+              //padding: '50px 0',
+              //timer: 2000
+              confirmButtonColor: "rgb(170, 2, 95)",
+            });
+          } else {
+          }
+        })
+        .catch((errors) => { });
+    },
+  },
+};
 </script>
 
 <style scoped>
