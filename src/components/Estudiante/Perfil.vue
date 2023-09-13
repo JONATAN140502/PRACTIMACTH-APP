@@ -149,7 +149,7 @@
           <div>
             <label>Habilidades</label> <br>
             <div class="form-check form-check-inline" v-for="(item,index) in knowledges">
-              <input class="form-check-input" type="checkbox"  v-model="knowledges" v-bind:value="item.id" :key="index" />
+              <input class="form-check-input" type="checkbox"  v-model="table.knowledges" v-bind:value="item.id" :key="index" />
               <label class="form-check-label" >{{item.name}}</label>
             </div>
           </div>
@@ -158,7 +158,7 @@
                        
                         
 
-                      <button  class="btn  btn-block mt-4 mb-4 btn-1 text-white" >Añadir</button>
+                      <button @click="mtdInsertArea"  class="btn  btn-block mt-4 mb-4 btn-1 text-white" >Añadir</button>
                                           
                         
                     </div>
@@ -180,7 +180,7 @@ export default {
       areas: [],
       specialties: [],
       subspecialties: [],
-      knowledges:[],
+      
       student: {
         id: this.$store.getters.get__student.id,
         name:"",
@@ -192,7 +192,11 @@ export default {
         area: null,
         specialty: null,
         subspecialty: null,
-      }
+      },
+      table:{
+        knowledges:[],
+        id_student:this.$store.getters.get__student.id
+      },
     };
   },
   created() {
@@ -252,6 +256,30 @@ export default {
         url: this.$store.getters.get__url + "/company/update",
         token: this.$store.getters.get__token,
         params: this.company,
+      })
+        .then((response) => {
+          if (response.state == 0) {
+            /** todo correto */
+            Swal.fire({
+              title: "Modificación Exitosa",
+              text: "Perfecto!",
+              icon: "success",
+              //showConfirmButton: true,
+              width: "400px",
+              //padding: '50px 0',
+              //timer: 2000
+              confirmButtonColor: "rgb(170, 2, 95)",
+            });
+          } else {
+          }
+        })
+        .catch((errors) => { });
+    },
+    mtdInsertData: function(){
+      this.post({
+        url: this.$store.getters.get__url + "/student/storeknowledge",
+        token: this.$store.getters.get__token,
+        params: this.table,
       })
         .then((response) => {
           if (response.state == 0) {
