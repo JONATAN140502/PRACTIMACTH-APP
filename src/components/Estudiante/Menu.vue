@@ -28,10 +28,10 @@
                         <a href="#" @click="cambiopagina('perfil')" >Perfil</a>
                     </li>
                     <li>
-                        <a href="#" @click="cambiopagina('oferta')"  >Match Recibidos</a>
+                        <a href="#" @click="cambiopagina('oferta')"  >Posibles Match</a>
                     </li>
                     <li>
-                        <a href="#"  @click="cambiopagina('match')" >Mis Postulaciones</a>
+                        <a href="#"  @click="cambiopagina('match')" >Mis Match</a>
                     </li>
                     <li class="cerrar">
                         <a href="#"> Cerrar</a>

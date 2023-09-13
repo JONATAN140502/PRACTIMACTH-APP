@@ -2,7 +2,7 @@
   <div class="contenedor">
     <h4>Match de {{user}}</h4>
     <div class="contenedor-card d-flex">
-      <div class="card  contenedor-card1">
+      <div class="card  contenedor-card1" :class="{ 'reducido': mostrarMatch }">
            <h5>Mis Match</h5>
            <div v-for="item in dataPractices" >
             <h5>{{item.name}}</h5>
@@ -13,7 +13,7 @@
            </div>
     
       </div>
-      <div class="card contenedor-card2">
+      <div class="card contenedor-card2 " v-if="!mostrarMatch">
         <h5>  Publicaciones de Ofertas</h5>
         <img src="../../assets/cierre.png" alt="" class="mx-auto">
         <p>¡ crear o edita tus ofertas de prácticas con Practimatch! 
@@ -22,7 +22,21 @@
         </p>
         <button @click="cambiopagina('publicacion')">Crear Publicacion</button>
       </div>
-
+    <div class="card contenedor-card3 " v-if="mostrarMatch">
+      <h5>Estudiantes que hicieron Match</h5>
+        <div>
+          <h5>Gloria Noelia Loro Ayala</h5>
+          <p><strong>DNI:</strong> 75555555555</p>
+          <p><strong>CICLO:</strong> X</p>
+          <p><strong>FACULTAD:</strong> FICSA</p>
+          <p><strong>ESCUELA:</strong> Ingeneria de sistemas</p>
+          <p><strong>CODIGO:</strong> 1584555A</p>
+          <p><strong>CORREO:</strong> GL@GMAIL.COM</p>
+          <p><strong>TELEFONO:</strong> 999999999</p>
+          <p><strong>HABILIDADES:</strong> Comunicacion, liderazgo</p>
+        </div>
+    </div>
+      
     </div>
   </div>
 </template>
@@ -32,6 +46,8 @@ import { mapActions } from "vuex";
 export default {
   data(){
     return{
+      firstClick: true,
+      mostrarMatch: false,
       page:null,
       dataStudent:[],
       dataPractices:[],
@@ -66,6 +82,10 @@ export default {
                 .catch((errors) => { });
         },
         mtdListStudent:function(id){
+          if (this.firstClick) {
+          this.mostrarMatch = !this.mostrarMatch;
+          this.firstClick = false;}
+
           this.filter.valueFilter=id;
           this.post({
                 url: this.$store.getters.get__url + "/match/myMatches",
@@ -76,6 +96,7 @@ export default {
                 console.log(response);
             })
                 .catch((errors) => { });
+                
         }
    }
 }
@@ -105,6 +126,7 @@ export default {
   width: 29%;
   padding:20px 30px;
   height: 350px;
+  
  }
  .contenedor-card1 h5{
   margin-bottom: 15px;
@@ -148,5 +170,25 @@ export default {
  }
  .contenedor-card2 button:hover{
   background: #1A5276;
+ }
+ .contenedor-card3{
+  width: 49%; 
+  padding:20px 30px;
+ }
+ .contenedor-card3 div {
+   border-top: 1px solid #000000;
+   padding: 15px 0px;
+ }
+
+ .contenedor-card3 p{
+  margin-bottom: 2px;
+  font-size: 13px;
+ }
+ .contenedor-card3 h5{
+  margin-bottom: 15px;
+  font-weight: 400;
+ }
+ .reducido{
+  width: 50%;
  }
 </style>
