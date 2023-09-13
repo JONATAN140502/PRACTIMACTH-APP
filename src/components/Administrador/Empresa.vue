@@ -12,6 +12,11 @@
               <th scope="col">RUC</th>
               <th scope="col">RAZON SOCIAL</th>
               <th scope="col">NOMBRE COMERCIAL</th>
+              <th scope="col">DESCRIPCION</th>
+              <th scope="col">DISTRITO</th>
+              <th scope="col">PROVINCIA</th>
+              <th scope="col">DIRECCION</th>
+              <th scope="col">TELEFONO</th>
               <th scope="col">CORREO</th>
               <th scope="col">ESTADO</th>
               <th scope="col">ACCIONES</th>
@@ -19,21 +24,31 @@
           </thead>
           <tbody>
             <tr class="">
-              <td >73336257</td>
-              <td >Luis Fernando Mechan LLontop</td>
-              <td >937398743</td>
-              <td >Luis@gmail.com</td>
+              <td >1073336257</td>
+              <td >EMPRESA S.A.C.</td>
+              <td >EMPRESA</td>
+              <td >Empresa muy conocida</td>
+              <td >Chiclayo</td>
+              <td >Monsefu</td>
+              <td >Calle Desconocida</td>
+              <td >999444222</td>
+              <td >empresa@gmail.com</td>
               <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
               <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit"></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
 
             </tr>
             <tr>
-              <td >73336257</td>
-              <td >Luis Fernando Mechan LLontop</td>
-              <td >937398743</td>
-              <td >Luis@gmail.com</td>
+              <td >1073336257</td>
+              <td >EMPRESA S.A.C.</td>
+              <td >EMPRESA</td>
+              <td >Empresa muy conocida</td>
+              <td >Chiclayo</td>
+              <td >Monsefu</td>
+              <td >Calle Desconocida</td>
+              <td >999444222</td>
+              <td >empresa@gmail.com</td>
               <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
-              <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit" ></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
+              <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit"></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
 
             </tr>
           </tbody>
