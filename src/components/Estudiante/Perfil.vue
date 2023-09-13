@@ -27,23 +27,23 @@
              <div class="d-flex input-flex" >
                 
                 <div>
-                  <label for="">Ciclo Academico:</label>
-                  <input type=" text">
+                  <label for="cicle">Ciclo Academico:</label>
+                  <input id="cicle" name="cicle" type=" text" v-model="student.cicle" />
                 </div>
                 <div>
                   <label for="">Escuela Profesional:</label>
-                  <input type=" text">
+                  <input id="school_name" name="school_name" type=" text" v-model="student.school_name" />
                 </div>
 
              </div>
               <div class="d-flex input-flex" >
                 <div>
-                  <label for="">Telefono:</label>
-                  <input type=" text">
+                  <label for="phone">Telefono:</label>
+                  <input id="phone" name="phone" type=" text" v-model="student.phone" />
                 </div>
                 <div class="correo">
                   <label for="">Correo:</label>
-                  <input type=" text">
+                  <input id="correo" name="correo" type=" text" v-model="student.correo" />
                 </div>
              </div>
             
@@ -102,7 +102,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content col-sm-11 p-">
                     <div class="modal-header mod-h  ">
-                      <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"> Configurar Habilidades</h4>
+                      <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"> Registrar Conocimientos</h4>
                       <div style="border: none ;cursor: pointer;" class="close text-white mr-2"  data-bs-dismiss="modal" aria-label="Close">
                         &times;
                       </div>
@@ -112,21 +112,22 @@
                       <div class="form-row d-flex mb-3">
                         <div class="form-group ">
                           <label for="inputtext">Areas:</label>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                          <select class="form-select" aria-label="Default select example" v-model="filter.area" @change="mtdSelectArea" >
+                            <option selected>---Selecciona--</option>
+                            <option v-for="(item, index) in areas" :key="index" :value="item.id">
+                  {{ item.name }}
+                </option>
                           </select>
                         </div>
                          <div class="form-group ">
                           <label for="inputtext">Especialidades</label>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
+                          <select class="form-select" name="areas" id="areas" aria-label="Default select example"
+                v-model="filter.specialty" @change="mtdSelectSpecialty">
+                <option disabled selected value="">Seleccione ...</option>
+                <option v-for="(item, index) in specialties" :key="index" :value="item.id">
+                  {{ item.name }}
+                </option>
+              </select>
                         </div>
 
                       </div>
@@ -199,6 +200,7 @@ export default {
   created() {
     this.user = this.$store.getters.get__student.name;
     this.mtdGetData(this.$store.getters.get__student.id);
+    
   },
   methods: {
     ...mapActions(["get", "post"]),
@@ -209,10 +211,42 @@ export default {
       })
         .then((response) => {
           this.student = response.data;
-          //this.areas = response.areas;
-          console.log(response);
+          this.mtdGetAreas();
         })
         .catch((errors) => { });
+    },
+    mtdGetAreas:function(){
+      this.get({
+            url: this.$store.getters.get__url + "/area",
+            token: this.$store.getters.get__token,
+         }).then((response) => {
+            this.areas = response.data;
+            console.log(this.areas);
+         })
+            .catch((errors) => { });
+    },
+    mtdSelectArea: function () {
+      this.areas.forEach((element, index) => {
+        if (element.id == this.filter.area) {
+          this.specialties = element.specialty;
+          this.subspecialties = [];
+          //console.log(this.specialties);
+        }
+      });
+    },
+    mtdSelectSpecialty: function () {
+      this.specialties.forEach((element, index) => {
+        if (element.id == this.filter.specialty) {
+          this.subspecialties = element.subspecialty;
+        }
+      });
+    },
+    mtdSelectSubspecialty: function () {
+      this.subspecialties.forEach((element, index) => {
+        if (element.id == this.filter.subspecialty) {
+          this.knowledges = element.knowledge;
+        }
+      });
     },
     mtdEditCompay: function () {
       this.post({
