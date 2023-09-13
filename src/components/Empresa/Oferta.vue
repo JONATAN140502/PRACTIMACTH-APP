@@ -55,75 +55,73 @@
     </div>
 
        <!--Modal-->
-       <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content col-sm-11 p-">
-                    <div class="modal-header mod-h  ">
-                      <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"><i class="fas fa-user"></i> Nuevo Cliente</h4>
-                      <div style="border: none ;cursor: pointer;" class="close text-white mr-2"  data-bs-dismiss="modal" aria-label="Close">
-                        &times;
-                      </div>
-                    
-                    </div>                  
-                    <div class="modal-body ">
-                      <div class="form-row d-flex mb-3">
-                        <div class="form-group ">
-                          <label for="inputtext">Dni:</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control"   placeholder="Dni" required>
-                          </div>
-                        </div>
-                         <div class="form-group ">
-                          <label for="inputtext">Nombre y Apellidos</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control"  placeholder="Nombres y Apellidos" required>
-                          </div>
-                        </div>
-
-                      </div>
-                      <div class="form-row d-flex mb-3">
-                        <div class="form-group ">
-                          <label for="inputtext">Correo:</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control"   placeholder="Correo" required>
-                          </div>
-                        </div>
-                         <div class="form-group ">
-                          <label for="inputtext">Telefono</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control"  placeholder="Telefono" required>
-                          </div>
-                        </div>
-
-                      </div>
-                      <div class="form-row d-flex mb-3">
-                        <div class="form-group ">
-                          <label for="inputtext">Usuario:</label>
-                          <div class="input-group">
-                              <input type="text" class="form-control"   placeholder="Usuario" required>
-                          </div>
-                        </div>
-                         <div class="form-group ">
-                          <label for="inputtext">Contraseña</label>
-                          <div class="input-group">
-                              <input type="password" class="form-control"  placeholder="Contraseña" required>
-                          </div>
-                        </div>
-
-                      </div>
-                         
-                       
-                        
-
-                      <button  class="btn  btn-block mt-4 mb-4 btn-1 text-white" >Registrar</button>
-                                          
-                        
-                    </div>
-                    
-                 
+      <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content col-sm-11 p-">
+            <div class="modal-header mod-h  ">
+              <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"><i class="fas fa-user"></i> Nuevo Cliente</h4>
+              <div style="border: none ;cursor: pointer;" class="close text-white mr-2"  data-bs-dismiss="modal" aria-label="Close">
+                &times;
+              </div>
+            
+            </div>                  
+            <div class="modal-body ">
+              <div class="form-row d-flex mb-3">
+                <div class="form-group col-12">
+                  <label for="name">Nombre de la publicacion:</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="name" id="name">
                   </div>
                 </div>
-    </div>
+
+              </div>
+              <div class="form-row d-flex mb-3">
+                <div class="form-group ">
+                  <label for="modalidad">Modalidad:</label>
+                  <select class="form-select" name="modalidad" id="modalidad" aria-label="Default select example"
+                v-model="Practice.modalidad">
+                    <option disabled value="">Seleccione ...</option>
+                    <option value="remoto">Remoto</option>
+                    <option value="presencial">Presencial</option>
+                  </select>
+                </div>
+                <div class="form-group ">
+                  <label for="workload">Carga de trabajo:</label>
+                  <select class="form-select" name="workload" id="workload" aria-label="Default select example"
+                v-model="Practice.workload">
+                    <option disabled value="">Seleccione ...</option>
+                    <option value="Medio tiempo">Medio tiempo</option>
+                    <option value="Por horas">Por horas</option>
+                  </select>
+
+                </div>
+
+              </div>
+              <div class="form-row d-flex mb-3">
+                <div class="form-group col-12 ">
+                  <label for="inputtext">Vacantes: </label>
+                  <div class="input-group">
+                    <input class="form-control" name="vacant" id="vacant" type=" text" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row d-flex mb-3">
+                <div class="form-group col-12 ">
+                  <label for="descripcion">Descripcion: </label>
+                  <textarea class="form-control" rows="3"  name="descripcion" id="descripcion"></textarea>
+                </div>
+              </div>    
+            
+
+              <button  class="btn  btn-block mt-4 mb-4 btn-1 text-white" >Actualizar</button>
+                                  
+                
+            </div>
+            
+          
+          </div>
+        </div>
+      </div>
 
 
   </div>
