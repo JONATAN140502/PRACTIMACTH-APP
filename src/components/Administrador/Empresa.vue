@@ -6,11 +6,11 @@
     </div>
     <div class="card mt-4">
       <div class="card-body p-4">
-        <table id="datatable" class="table">
-          <thead class="table-secondary ">
+        <table id="datatable" class="table scroll-table nowrap py-3 ">
+          <thead class="table-secondary  ">
             <tr class="">
               <th scope="col">RUC</th>
-              <th scope="col">RAZON SOCIAL</th>
+              <th scope="col" >RAZON SOCIAL</th>
               <th scope="col">NOMBRE COMERCIAL</th>
               <th scope="col">DESCRIPCION</th>
               <th scope="col">DISTRITO</th>
@@ -27,30 +27,20 @@
               <td >1073336257</td>
               <td >EMPRESA S.A.C.</td>
               <td >EMPRESA</td>
-              <td >Empresa muy conocida</td>
+              <td  >Empresa muy conocida</td>
               <td >Chiclayo</td>
               <td >Monsefu</td>
               <td >Calle Desconocida</td>
               <td >999444222</td>
               <td >empresa@gmail.com</td>
               <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
-              <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit"></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
+              <td class=" px-0 py-2">
+                <button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit"></i>
+                </button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button>
+              </td>
 
             </tr>
-            <tr>
-              <td >1073336257</td>
-              <td >EMPRESA S.A.C.</td>
-              <td >EMPRESA</td>
-              <td >Empresa muy conocida</td>
-              <td >Chiclayo</td>
-              <td >Monsefu</td>
-              <td >Calle Desconocida</td>
-              <td >999444222</td>
-              <td >empresa@gmail.com</td>
-              <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
-              <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit"></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
-
-            </tr>
+           
           </tbody>
         </table>
       </div>
@@ -111,6 +101,12 @@ export default {
     color: white;
     border-radius: 8px;
   }
-  
+  .scroll-table {
+    display: block;
+   
+    overflow-x: auto;
+
+  }
+ 
 
 </style>

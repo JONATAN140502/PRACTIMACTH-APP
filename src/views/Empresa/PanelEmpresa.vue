@@ -8,7 +8,10 @@
           <Perfil v-if="page=='perfil'"  />
           <Oferta v-if="page=='oferta'"  @cambiopagina="cambiopagina" />
           <Match v-if="page=='match'"   @cambiopagina="cambiopagina"/>
-          <Publicacion v-if="page=='publicacion'"  />
+          <Area v-if="page=='area'"  />
+          <Especialidades v-if="page=='especialidades'"  />
+          <Subespecialidades v-if="page=='subespecialidades'"  />
+
         </div>
      
       </div>
@@ -25,6 +28,9 @@ import Perfil from '../../components/Empresa/Perfil.vue'
 import Oferta from '../../components/Empresa/Oferta.vue'
 import Match from '../../components/Empresa/Macth.vue'
 import Publicacion from '../../components/Empresa/Publicaciones.vue'
+import Area from '../../components/Empresa/Area.vue'
+import Especialidades from '../../components/Empresa/Especialidades.vue'
+import Subespecialidades from '../../components/Empresa/Subespecialidades.vue'
 export default {
  name:'PanelEmpresa',
  components:{
@@ -34,7 +40,10 @@ export default {
    Perfil,
    Oferta,
    Match,
-   Publicacion
+   Publicacion,
+   Area,
+   Especialidades,
+   Subespecialidades
  },
       data(){
       return{
