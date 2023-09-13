@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="card contenedor-card1-botones ">
-                <button >Nueva Publicacion</button>
+                <button @click="cambiopagina('publicacion')">Nueva Publicacion</button>
                 <button @click="cambiopagina('perfil')">Perfil</button>
                 <button @click="cambiopagina('match')">Mis Match</button>
               

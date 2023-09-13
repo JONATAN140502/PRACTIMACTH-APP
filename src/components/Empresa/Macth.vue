@@ -33,7 +33,7 @@
           Y nos encargaremos de descubrir y atraer a jóvenes talentos prometedores que encajen perfectamente 
           con tus ofertas de prácticas.
         </p>
-        <button>Crear Publicacion</button>
+        <button @click="cambiopagina('publicacion')">Crear Publicacion</button>
       </div>
 
     </div>
@@ -42,7 +42,17 @@
 
 <script>
 export default {
-
+  data(){
+    return{
+      page:null
+    }
+   },
+   methods:{
+       cambiopagina(page){
+        this.$emit('cambiopagina',page)
+       
+       }
+   }
 }
 </script>
 
