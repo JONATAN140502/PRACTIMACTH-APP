@@ -28,6 +28,15 @@
                         <a href="#" @click="cambiopagina('perfil')" >Perfil</a>
                     </li>
                     <li>
+                        <a href="#" @click="cambiopagina('area')" >Area</a>
+                    </li>
+                    <li>
+                        <a href="#" @click="cambiopagina('especialidades')" >Especialidades</a>
+                    </li>
+                    <li>
+                        <a href="#" @click="cambiopagina('subespecialidades')" >Subespecialidades</a>
+                    </li>
+                    <li>
                         <a href="#" @click="cambiopagina('oferta')">Mis Publicaciones</a>
                     </li>
                     <li>
