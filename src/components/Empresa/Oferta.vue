@@ -66,7 +66,7 @@
             
             </div>                  
             <div class="modal-body ">
-              <div class="form-row d-flex mb-3">
+              <div class="form-row  mb-3">
                 <div class="form-group col-12">
                   <label for="name">Nombre de la publicacion:</label>
                   <div class="input-group">
@@ -75,7 +75,7 @@
                 </div>
 
               </div>
-              <div class="form-row d-flex mb-3">
+              <div class="form-row d-flex mb-3 select" >
                 <div class="form-group ">
                   <label for="modalidad">Modalidad:</label>
                   <select class="form-select" name="modalidad" id="modalidad" aria-label="Default select example"
@@ -97,7 +97,7 @@
                 </div>
 
               </div>
-              <div class="form-row d-flex mb-3">
+              <div class="form-row  mb-3">
                 <div class="form-group col-12 ">
                   <label for="inputtext">Vacantes: </label>
                   <div class="input-group">
@@ -105,7 +105,7 @@
                   </div>
                 </div>
               </div>
-              <div class="form-row d-flex mb-3">
+              <div class="form-row  mb-3">
                 <div class="form-group col-12 ">
                   <label for="descripcion">Descripcion: </label>
                   <textarea class="form-control" rows="3"  name="descripcion" id="descripcion"></textarea>
@@ -218,6 +218,9 @@ export default {
 </script>
 
 <style scoped>
+.select div {
+  width: 195px;
+}
 .contenedor {
   font-family: "Open Sans", sans-serif;
   padding: 25px 40px;
@@ -321,7 +324,7 @@ export default {
     background:#2A7EB6   ;
 }
 .mod-h{
-    background: #1F618D;
+    background: #1f618d;
     padding: 8px 40px 15px 40px;
 }
 .modal-body .d-flex {
@@ -329,7 +332,7 @@ export default {
   flex-wrap: wrap;
 }
 .modal-body{
-  padding: 30px;
+  padding: 20px 50px;
 }
 .modal-body .d-flex label{
  margin-bottom: 8px;
