@@ -28,6 +28,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/LoginEmpresas.vue')
   },
   {
+    path: '/LoginAdmin',
+    name: 'LoginAdmin',
+    component: () => import(/* webpackChunkName: "about" */ '../views/LoginAdministrador.vue')
+  },
+  {
     path: '/RegistroEstudiante',
     name: 'RegistroEstudiante',
     component: () => import(/* webpackChunkName: "about" */ '../views/RegistroAlumno.vue')
@@ -47,6 +52,11 @@ const routes = [
     path: '/PanelEstudiante',
     name: 'PanelEstudiante',
     component: () => import('../views/Estudiante/PanelEstudiante.vue')
+  },
+  {
+    path: '/PanelAdmin',
+    name: 'PanelAdmin',
+    component: () => import('../views/Administrador/PanelAdministrador.vue')
   },
   
 ]

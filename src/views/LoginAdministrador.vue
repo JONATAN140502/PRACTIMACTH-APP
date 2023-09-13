@@ -41,16 +41,15 @@ export default {
             if (this.login.login != null) {
                 if (this.login.password != null) {
                     this.post({
-                        url: this.url + '/login/logincompany',
+                        url: this.url + '/login/loginadmin',
                         params: this.login
                     })
                         .then((response) => {
-                            if (response.company != null) {
-                                this.$store.commit('mt_set_company', response.company);
-                                console.log(this.$store.getters.get__company);
+                            console.log(response);
+                            if (response.user!= null) {
+                                this.$store.commit('mt_set_refresh', response.user);
                                 console.log(this.$store.getters.get__user);
-                                console.log("company:" + response.state);
-                                this.$router.push({ path: '/PanelEmpresa' })
+                                this.$router.push({ path: '/PanelAdmin' })
                             } else {
                                alert('Datos incorrectos');
                             }

@@ -12,50 +12,155 @@
         <div class="contenedor-formulario-input">
           <div>
             <label for=""> DNI </label>
-            <input type="text">
+            <input type="text" v-model="student.dni" v-on:keypress="isNumber($event)"  
+            @keyup="mtdSearchDocument" maxlength="8" placeholder="DNI">
           </div>
           <div>
             <label for=""> NOMBRE Y APELLIDOS: </label>
-            <input type="text">
+            <input type="text" v-model="student.last_name" >
           </div>
          
           
           <div class="correo">
             <label for=""> CORREO: </label>
-            <input type="text">
+            <input type="text" v-model="student.dni">
           </div>
           
           <div>
             <label for=""> TELEFONO: </label>
-            <input type="text">
+            <input type="text" v-model="student.dni">
           </div>
           <div>
             <label for=""> USUARIO</label>
-            <input type="text">
+            <input type="text" v-model="student.dni">
           </div>
           <div>
             <label for=""> CONTRASEÑA</label>
-            <input type=" password">
+            <input type=" password" v-model="student.dni">
           </div>
           
         </div>
-        
-
-        <button type="button"> Crear Cuenta </button>
-
-
-
-
-
-
+     <button type="button"> Crear Cuenta </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
-   
+   data(){
+    return{
+      student:{
+      name:null,
+      names:null,
+      last_name:null,
+      code:null,
+      dni:null,
+      correo:null,
+      phone:null,
+      id_school:null,
+      skills:null,
+      state:null,
+      cicle:null,
+    },
+    documento:null
+    }
+   },
+   created() {
+    
+  },
+
+  computed: {
+       
+    },
+    methods: {
+    ...mapActions(["get", "post"]),
+    //metodo insertar data
+    mtdInsertData: function () {
+        this.post({
+          url: this.$store.getters.get__url + "/company/store",
+          token: this.$store.getters.get__token,
+          params: this.student,
+        })
+          .then((response) => {
+            if (response.state == 0) {
+              /** todo correcto **/
+              Swal.fire({
+                title: "Registro Exitoso",
+                text: "Perfecto!",
+                icon: "success",
+                //showConfirmButton: true,
+                width: "400px",
+                //padding: '50px 0',
+                //timer: 2000
+                confirmButtonColor: "rgb(170, 2, 95)",
+              });
+              this.dataCategory.push(response.data[0]);
+              this.mtdHideModal();
+              //this.$refs.modalForm.modal("hide");
+            } else {
+            }
+          })
+          .catch((errors) => {});
+     
+    },
+    mtdSearchDocument: function(){
+      if (this.student.dni.length == 8) {
+        this.documento=this.student.dni;
+        this.post({
+          url:
+            this.$store.getters.get__url +
+            "/consulta/dni" ,
+            params: this.documento,
+            
+        })
+          .then((response) => {
+           console.log(response);
+
+            // if (response.boo == 3) {
+            //   this.client.document="";
+            //   Swal.fire({
+            //   text:'DNI no encontrado',
+            //   icon:'warning', 
+            //   confirmButtonColor: '#900052',
+            // });
+            // } else {
+            //   this.client.fullName = response.name+" "+response.last_name;
+            //   if (response.hasOwnProperty("patient")) {
+            //     this.client.celphone=response.patient.phone;
+            //     this.client.email=response.patient.email;
+            //     this.client.yearOld=response.patient.year;
+            //       } else {
+            //         this.client.celphone="";
+            //     this.client.email="";
+            //     this.client.yearOld="";
+            //         Swal.fire({
+            //   text:'Paciente Nuevo',
+            //   icon:'warning', 
+            //   confirmButtonColor: '#900052',
+            // });
+            //       }
+             
+            // }
+          })
+          .catch((errors) => {});
+      }
+    },
+    isNumber: function (evt) {
+      evt = evt ? evt : window.event;
+      var charCode = evt.which ? evt.which : evt.keyCode;
+      if (
+        charCode > 31 &&
+        (charCode < 48 || charCode > 57) &&
+        charCode !== 46
+      ) {
+        evt.preventDefault();
+      } else {
+        return true;
+      }
+    },
+  }
 }
 </script>
 
