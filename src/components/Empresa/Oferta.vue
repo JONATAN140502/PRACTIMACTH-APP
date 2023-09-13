@@ -59,7 +59,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content col-sm-11 p-">
             <div class="modal-header mod-h  ">
-              <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"><i class="fas fa-user"></i> Nuevo Cliente</h4>
+              <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"><i class="far fa-newspaper"></i> Edicion de publicacion</h4>
               <div style="border: none ;cursor: pointer;" class="close text-white mr-2"  data-bs-dismiss="modal" aria-label="Close">
                 &times;
               </div>
