@@ -275,7 +275,7 @@ export default {
         })
         .catch((errors) => { });
     },
-    mtdInsertData: function(){
+    mtdInsertArea: function(){
       this.post({
         url: this.$store.getters.get__url + "/student/storeknowledge",
         token: this.$store.getters.get__token,
@@ -294,6 +294,7 @@ export default {
               //timer: 2000
               confirmButtonColor: "rgb(170, 2, 95)",
             });
+            modal.hidden();
           } else {
           }
         })
