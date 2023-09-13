@@ -5,6 +5,7 @@
       <div class="card  contenedor-card1">
            <h5>Mis Postulaciones</h5>
            <div >
+            <h3>Empresa Soft</h3>
             <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                Perspiciatis perferendis aut exercitationem maiores cumque. 
@@ -12,9 +13,10 @@
               dolor minus alias, libero soluta, voluptatum magni nam!
             </p>   
             <p>2023-09-08</p> 
-            <button >Ver Informacion</button>            
+            <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button>           
            </div>
            <div >
+            <h3>Empresa Soft</h3>
             <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                Perspiciatis perferendis aut exercitationem maiores cumque. 
@@ -22,7 +24,7 @@
               dolor minus alias, libero soluta, voluptatum magni nam!
             </p>   
             <p>2023-09-08</p> 
-            <button >Ver Informacion </button>            
+            <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button>            
            </div>
     
       </div>
@@ -98,14 +100,11 @@ export default {
    border: none;
    width: 200px;
    color: white;
-   background: green;
    padding: 4px 0px;
    border-radius: 5px;
  }
 
- .contenedor-card1 button:hover{
-  background: #145A32;
- }
+ 
  .contenedor-card2 img{
     width: 120px;
     height: 120px;
