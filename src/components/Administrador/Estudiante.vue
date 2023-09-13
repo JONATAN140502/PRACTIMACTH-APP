@@ -10,9 +10,12 @@
           <thead class="table-secondary ">
             <tr class="">
               <th scope="col">DNI</th>
+              <th scope="col">CODIGO UNIVERSITARIO</th>
               <th scope="col">NOMBRES Y APELLIDOS</th>
               <th scope="col">TELEFONO</th>
               <th scope="col">CORREO</th>
+              <th scope="col">ESCUELA</th>
+              <th scope="col">CICLO ACADEMICO</th>
               <th scope="col">ESTADO</th>
               <th scope="col">ACCIONES</th>
             </tr>
@@ -20,18 +23,24 @@
           <tbody>
             <tr class="">
               <td >73336257</td>
+              <td >184520E</td>
               <td >Luis Fernando Mechan LLontop</td>
               <td >937398743</td>
               <td >Luis@gmail.com</td>
+              <td >FICSA</td>
+              <td >DECIMO CICLO</td>  
               <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
               <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit" ></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
 
             </tr>
             <tr>
               <td >73336257</td>
+              <td >184520E</td>
               <td >Luis Fernando Mechan LLontop</td>
               <td >937398743</td>
               <td >Luis@gmail.com</td>
+              <td >FICSA</td>
+              <td >DECIMO CICLO</td>  
               <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
               <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit" ></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
 
