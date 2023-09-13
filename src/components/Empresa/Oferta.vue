@@ -37,7 +37,7 @@
             <div class="">
               <p>{{ item.modalidad }}</p>
               <p>Vacantes: {{ item.vacant }}</p>
-              <button type="button" class="btn btn-warning btn-icon mx-1">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#nuevo"  class="btn btn-warning btn-icon mx-1">
                 <i class="fas fa-edit"></i>
               </button>
               <button
@@ -53,6 +53,79 @@
         </div>
       </div>
     </div>
+
+       <!--Modal-->
+       <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content col-sm-11 p-">
+                    <div class="modal-header mod-h  ">
+                      <h4 class="modal-title  text-white mt-4 mb-2 ml-3  " id="exampleModalLabel"><i class="fas fa-user"></i> Nuevo Cliente</h4>
+                      <div style="border: none ;cursor: pointer;" class="close text-white mr-2"  data-bs-dismiss="modal" aria-label="Close">
+                        &times;
+                      </div>
+                    
+                    </div>                  
+                    <div class="modal-body ">
+                      <div class="form-row d-flex mb-3">
+                        <div class="form-group ">
+                          <label for="inputtext">Dni:</label>
+                          <div class="input-group">
+                              <input type="text" class="form-control"   placeholder="Dni" required>
+                          </div>
+                        </div>
+                         <div class="form-group ">
+                          <label for="inputtext">Nombre y Apellidos</label>
+                          <div class="input-group">
+                              <input type="text" class="form-control"  placeholder="Nombres y Apellidos" required>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="form-row d-flex mb-3">
+                        <div class="form-group ">
+                          <label for="inputtext">Correo:</label>
+                          <div class="input-group">
+                              <input type="text" class="form-control"   placeholder="Correo" required>
+                          </div>
+                        </div>
+                         <div class="form-group ">
+                          <label for="inputtext">Telefono</label>
+                          <div class="input-group">
+                              <input type="text" class="form-control"  placeholder="Telefono" required>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="form-row d-flex mb-3">
+                        <div class="form-group ">
+                          <label for="inputtext">Usuario:</label>
+                          <div class="input-group">
+                              <input type="text" class="form-control"   placeholder="Usuario" required>
+                          </div>
+                        </div>
+                         <div class="form-group ">
+                          <label for="inputtext">Contraseña</label>
+                          <div class="input-group">
+                              <input type="password" class="form-control"  placeholder="Contraseña" required>
+                          </div>
+                        </div>
+
+                      </div>
+                         
+                       
+                        
+
+                      <button  class="btn  btn-block mt-4 mb-4 btn-1 text-white" >Registrar</button>
+                                          
+                        
+                    </div>
+                    
+                 
+                  </div>
+                </div>
+    </div>
+
+
   </div>
 </template>
 
@@ -241,4 +314,30 @@ export default {
 .texto p {
   font-size: 14px;
 }
+
+.btn-1{
+    background: #1F618D;
+    width: 100%;
+}
+.btn-1:hover{
+    background:#2A7EB6   ;
+}
+.mod-h{
+    background: #1F618D;
+    padding: 8px 40px 15px 40px;
+}
+.modal-body .d-flex {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.modal-body{
+  padding: 30px;
+}
+.modal-body .d-flex label{
+ margin-bottom: 8px;
+}
+
+
+
+
 </style>
