@@ -13,7 +13,7 @@
           <div>
             <label for=""> DNI </label>
             <input type="text" v-model="student.dni" v-on:keypress="isNumber($event)"  
-            @keyup="mtdSearchDocument" maxlength="8" placeholder="DNI">
+            @keyup="mtdSearchDocument" maxlength="8" placeholder="">
           </div>
           <div>
             <label for=""> NOMBRE Y APELLIDOS: </label>
@@ -36,15 +36,15 @@
           </div>
           <div>
             <label for=""> CONTRASEÑA</label>
-            <input type=" password" v-model="student.password">
+            <input type="password" v-model="student.password">
           </div>
           <div>
             <label for="">CODIGO UNIVERSITARIO</label>
-            <input type=" password" v-model="student.code">
+            <input type="text" v-model="student.code">
           </div>
-          <div>
+          <div class="">
             <label for=""> FACULTAD: </label>
-            <select v-model="filter.faculty" 
+            <select class="" v-model="filter.faculty" 
                   @change="mtdSelectFaculty"
                     >
                     <option selected >Seleccione</option>
@@ -302,6 +302,7 @@ export default {
 }
 .contenedor-formulario-input input{
     margin-bottom: 20px;
+    width: 210px;
     
 }
 .contenedor-formulario label{
@@ -316,6 +317,12 @@ export default {
     padding: 7px 10px;
     background:#2C3E50;
     color:#FFFFFF
+}
+.contenedor-formulario-input select{
+    margin-bottom: 20px;
+    width: 210px;
+    padding: 2.5px 0;
+    
 }
 .contendor-img{
     width: 49%;
