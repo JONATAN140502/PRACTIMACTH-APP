@@ -6,7 +6,7 @@
             </div>
             <div class="btn-group contenedor-perfil" role="group">
                     <button type="button" class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                     Luis Fernando 
+                     {{user}} 
                     </button>
                     <ul class="dropdown-menu ">
                         <li>
@@ -55,6 +55,9 @@ export default {
       page:null
     }
    },
+   created() {
+        this.user = this.$store.getters.get__company.name;
+    },
    methods:{
        cambiopagina(page){
         this.$emit('cambiopagina',page)
