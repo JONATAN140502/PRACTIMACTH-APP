@@ -41,9 +41,9 @@
                </div>
 
             </div>
-            <div class="texto" v-if="dataPractices.length==0">
+            <div class="texto text-center" v-if="dataPractices.length==0">
                <h5>No hay sugerencias, completa tu perfil</h5>
-               <button @click="cambiopagina('perfil')" >Mejorar Perfil</button>
+               <button  class="mejorar-perfil" @click="cambiopagina('perfil')" >Mejorar Perfil</button>
             </div>
 
 
@@ -66,6 +66,7 @@
                   <div class="">
                      <p>{{practice.modalidad}}</p>
                      <p>V{{practice.vacant}}</p>
+                     <button>Hacer Mactch</button>
                   </div>
                </div>
 
@@ -237,6 +238,17 @@ export default {
 
 .reducido {
    width: 49%;
+}
+.mejorar-perfil{
+   border: none;
+  background: #1F618D;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+
+}
+.mejorar-perfil:hover{
+   background: #1A5276;
 }
 
 
