@@ -5,30 +5,24 @@
           <span class="s1">25</span>
           <span class="s2">
             <div><i class="fa fa-user"></i></div>
-            <div>Usuario</div>
+            <div>Alumnos</div>
           </span>
          </div>
          <div class="card" style="background:#5DADE2   ;" >
-          <span class="s1">25</span>
+          <span class="s1">12</span>
           <span class="s2">
-            <div><i class="fa fa-user"></i></div>
-            <div>Usuario</div>
-          </span>
-         </div>
-         <div class="card" style="background:#52BE80  ;" >
-          <span class="s1">25</span>
-          <span class="s2">
-            <div><i class="fa fa-user"></i></div>
-            <div>Usuario</div>
+            <div><i class="fa fa-heart"></i></div>
+            <div>Macth</div>
           </span>
          </div>
          <div class="card" style="background:#ABB2B9  ;" >
-          <span class="s1">25</span>
+          <span class="s1">30</span>
           <span class="s2">
-            <div><i class="fa fa-user"></i></div>
-            <div>Usuario</div>
+            <div><i class="fa fa-list"></i></div>
+            <div>Publicaciones</div>
           </span>
          </div>
+         
       </div>
   </div>
 </template>
@@ -50,7 +44,7 @@ export default {
    
   }
   .contenedor div .card{
-    width: 24%;
+    width: 32%;
     height: 200px;
     border: none;
     
