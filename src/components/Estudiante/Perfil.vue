@@ -49,7 +49,7 @@
             
              <div class="correo">
                   <label for="">Usuario:</label>
-                  <input type=" text">
+                  <input id="user_name" name="user_name" type=" text" v-model="student.user_name" />
              </div>
 
            </div>
@@ -113,7 +113,7 @@
                         <div class="form-group ">
                           <label for="inputtext">Areas:</label>
                           <select class="form-select" aria-label="Default select example" v-model="filter.area" @change="mtdSelectArea" >
-                            <option selected>---Selecciona--</option>
+                            <option disabled selected value="">Seleccione...</option>
                             <option v-for="(item, index) in areas" :key="index" :value="item.id">
                   {{ item.name }}
                 </option>
@@ -200,6 +200,7 @@ export default {
   created() {
     this.user = this.$store.getters.get__student.name;
     this.mtdGetData(this.$store.getters.get__student.id);
+    this.mtdGetAreas();
     
   },
   methods: {
@@ -211,7 +212,7 @@ export default {
       })
         .then((response) => {
           this.student = response.data;
-          this.mtdGetAreas();
+          
         })
         .catch((errors) => { });
     },
@@ -221,7 +222,7 @@ export default {
             token: this.$store.getters.get__token,
          }).then((response) => {
             this.areas = response.data;
-            console.log(this.areas);
+            //console.log(this.areas);
          })
             .catch((errors) => { });
     },
@@ -230,7 +231,7 @@ export default {
         if (element.id == this.filter.area) {
           this.specialties = element.specialty;
           this.subspecialties = [];
-          //console.log(this.specialties);
+          console.log(this.specialties);
         }
       });
     },
