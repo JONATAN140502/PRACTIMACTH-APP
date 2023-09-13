@@ -28,7 +28,7 @@
                   <div>
                      <h3>{{ item.name }}</h3>
                      <h5>{{ item.descripcion }}</h5>
-                     <p>{{ item.modalidad}} </p>
+                     <p>{{ item.modalidad }} </p>
                   </div>
                   <p>{{ item.date }}</p>
 
@@ -41,9 +41,9 @@
                </div>
 
             </div>
-            <div class="texto text-center" v-if="dataPractices.length==0">
+            <div class="texto text-center" v-if="dataPractices.length == 0">
                <h5>No hay sugerencias, completa tu perfil</h5>
-               <button  class="mejorar-perfil" @click="cambiopagina('perfil')" >Mejorar Perfil</button>
+               <button class="mejorar-perfil" @click="cambiopagina('perfil')">Mejorar Perfil</button>
             </div>
 
 
@@ -54,19 +54,19 @@
             <div class="texto">
                <div>
                   <div>
-                     <h3>{{ practice.company.name }}</h3>
-                     <h5>{{practice.name}}</h5>
-                     <p>L{{practice.descripcion}}</p>
+                     <h3>{{ practice.company_name}}</h3>
+                     <h5>{{ practice.name }}</h5>
+                     <p>{{ practice.descripcion }}</p>
                   </div>
-                  <p>{{practice.data}}</p>
+                  <p>{{ practice.data }}</p>
 
                </div>
                <div class="d-flex">
                   <img src="../../assets/work.png" alt="">
                   <div class="">
-                     <p>{{practice.modalidad}}</p>
-                     <p>V{{practice.vacant}}</p>
-                     <button>Hacer Mactch</button>
+                     <p>{{ practice.modalidad }}</p>
+                     <p>Vacantes: {{ practice.vacant }}</p>
+                     <button @click="mtdCreateMatch(practice.id)" >Hacer Mactch</button>
                   </div>
                </div>
 
@@ -84,14 +84,18 @@ export default {
          firstClick: true,
          mostrarMatch: false,
          page: null,
-         dataPractices:[],
-         filter:{
-            id:this.$store.getters.get__student.id,
-            
+         dataPractices: [],
+         filter: {
+            filter_student: this.$store.getters.get__student.id,
+
          },
-         practice:{
-            name:null,
-            modalidad:null,
+         practice: {
+            name: null,
+            modalidad: null,
+         },
+         table:{
+            id_student:this.$store.getters.get__student.id,
+            id_practice: null,
          }
       }
    },
@@ -107,16 +111,16 @@ export default {
 
       },
       mtdGetData: function () {
-         //this.filter.valueFilter=id;
-          this.post({
-                url: this.$store.getters.get__url + "/match/filterPractices",
-                token: this.$store.getters.get__token,
-                params: this.filter,
-            }).then((response) => {
-                this.dataPractices = response;
-                console.log(response);
-            })
-                .catch((errors) => { });
+         //Posibles match
+         this.post({
+            url: this.$store.getters.get__url + "/match/filterPractices",
+            token: this.$store.getters.get__token,
+            params: this.filter,
+         }).then((response) => {
+            this.dataPractices = response;
+            //console.log(response);
+         })
+            .catch((errors) => { });
       },
       mtdListOferta: function (id) {
          if (this.firstClick) {
@@ -124,14 +128,41 @@ export default {
             this.firstClick = false;
          }
          this.get({
-        url: this.$store.getters.get__url + "/practice/" + id + "/show",
+            url: this.$store.getters.get__url + "/practice/" + id + "/show",
+            token: this.$store.getters.get__token,
+         })
+            .then((response) => {
+               this.practice = response.data[0];
+               console.log(response.data);
+            })
+            .catch((errors) => { });
+      },
+      mtdCreateMatch: function(id_practice){
+         this.table.id_practice=id_practice;
+         this.post({
+        url: this.$store.getters.get__url + "/match/store",
         token: this.$store.getters.get__token,
+        params: this.table,
       })
         .then((response) => {
-          this.practice = response.data[0];
+          if (response.state == 0) {
+            /** todo correto */
+            Swal.fire({
+              title: "Hiciste Match",
+              text: "Perfecto!",
+              icon: "success",
+              //showConfirmButton: true,
+              width: "400px",
+              //padding: '50px 0',
+              //timer: 2000
+              confirmButtonColor: "rgb(170, 2, 95)",
+            });
+
+          } else {
+          }
         })
         .catch((errors) => { });
-      }
+      },
    }
 }
 </script>
@@ -239,15 +270,17 @@ export default {
 .reducido {
    width: 49%;
 }
-.mejorar-perfil{
+
+.mejorar-perfil {
    border: none;
-  background: #1F618D;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
+   background: #1F618D;
+   color: white;
+   padding: 10px 20px;
+   border-radius: 25px;
 
 }
-.mejorar-perfil:hover{
+
+.mejorar-perfil:hover {
    background: #1A5276;
 }
 
