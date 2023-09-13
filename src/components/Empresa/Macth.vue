@@ -1,27 +1,14 @@
 <template>
   <div class="contenedor">
-    <h4>Macth de la Empresa</h4>
+    <h4>Match de {{user}}</h4>
     <div class="contenedor-card d-flex">
       <div class="card  contenedor-card1">
            <h5>Mis Match</h5>
-           <div >
-            <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-               Perspiciatis perferendis aut exercitationem maiores cumque. 
-              Iusto ea numquam, reprehenderit ad quia laboriosam sapiente
-              dolor minus alias, libero soluta, voluptatum magni nam!
+           <div v-for="item in dataPractices" >
+            <h5>{{item.name}}</h5>
+            <p>{{ item.descripcion }}
             </p>   
-            <p>2023-09-08</p> 
-            <button >Ver Macth</button>            
-           </div>
-           <div >
-            <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-               Perspiciatis perferendis aut exercitationem maiores cumque. 
-              Iusto ea numquam, reprehenderit ad quia laboriosam sapiente
-              dolor minus alias, libero soluta, voluptatum magni nam!
-            </p>   
-            <p>2023-09-08</p> 
+            <p>{{item.date}}</p> 
             <button >Ver Macth</button>            
            </div>
     
@@ -41,17 +28,44 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data(){
     return{
-      page:null
+      page:null,
+      dataMatch:[],
+      dataPractices:[],
+      filter:{
+        type:"company",
+        valueFilter: this.$store.getters.get__company.id ,
+        labelFilter: "id_company",
+        id: this.$store.getters.get__company.id,
+      }
     }
    },
+   created() {
+        this.user = this.$store.getters.get__company.name;
+        this.ruc = this.$store.getters.get__company.ruc;
+        this.mtdGetData();
+    },
    methods:{
+    ...mapActions(['get', 'post']),
        cambiopagina(page){
         this.$emit('cambiopagina',page)
        
-       }
+       },
+       mtdGetData: function () {
+
+            this.post({
+                url: this.$store.getters.get__url + "/practice/filter",
+                token: this.$store.getters.get__token,
+                params: this.filter,
+            }).then((response) => {
+                this.dataPractices = response.data;
+                //console.log(response.data);
+            })
+                .catch((errors) => { });
+        },
    }
 }
 </script>
