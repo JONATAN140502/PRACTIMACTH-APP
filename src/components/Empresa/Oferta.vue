@@ -40,7 +40,9 @@
                     <div class="">
                         <p>Modalidad: Presencial </p>
                         <p>Vacantes: 10</p>
-                        <button>Hacer Match</button>
+                        <button  type="button" class="btn btn-danger btn-icon "><i class="fas fa-trash-alt"></i></button>
+                        <button type="button" class="btn btn-warning btn-icon mx-1"><i class="fas fa-edit"></i></button>
+                        <button class="match">Hacer Match</button>
                     </div>
                 </div>
 
@@ -62,11 +64,38 @@
                     <div class="">
                         <p>Modalidad: Presencial </p>
                         <p>Vacantes: 10</p>
-                        <button>Hacer Match</button>
+                        <button  type="button" class="btn btn-danger btn-icon "><i class="fas fa-trash-alt"></i></button>
+                        <button type="button" class="btn btn-warning btn-icon mx-1"><i class="fas fa-edit"></i></button>
+                        <button class="match">Hacer Match</button>
                     </div>
                 </div>
 
             </div>
+            <div class="texto">
+                <div > 
+                    <div>
+                        <h5>Analista Programador RPA, Inteligencia Artificial con Node JS y Python</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perspiciatis perferendis aut exercitationem maiores cumque. 
+                            Iusto ea numquam, reprehenderit ad quia laboriosam sapiente
+                            dolor minus alias, libero soluta, voluptatum magni nam!</p>
+                    </div>
+                    <p>2023-09-08</p>
+
+                </div>
+                <div class="d-flex">
+                    <img src="../../assets/work.png" alt="">
+                    <div class="">
+                        <p>Modalidad: Presencial </p>
+                        <p>Vacantes: 10</p>
+                        <button  type="button" class="btn btn-danger btn-icon "><i class="fas fa-trash-alt"></i></button>
+                        <button type="button" class="btn btn-warning btn-icon mx-1"><i class="fas fa-edit"></i></button>
+                        <button class="match">Hacer Match</button>
+                    </div>
+                </div>
+
+            </div>
+            
            
             
         </div>
@@ -153,16 +182,17 @@ export default {
     font-weight: 400;
  }
  .contenedor-card2 .d-flex img{
-    width: 80px;
+    width: 90px;
  }
- .contenedor-card2 .d-flex button{
+ .contenedor-card2 .d-flex .match{
     border:none;
     background:red ;
     width: 150px;
     color:white;
     border-radius: 5px;
+    padding: 7px 0px;
  }
- .contenedor-card2 .d-flex button:hover{
+ .contenedor-card2 .d-flex .match:hover{
     background:#C0392B ;
  }
 
