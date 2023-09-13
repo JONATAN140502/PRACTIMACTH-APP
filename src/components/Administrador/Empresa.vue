@@ -1,17 +1,17 @@
 <template>
   <div class="contenedor">
-     <div class="contenedor-texto">
-        <h4 class="d-inline ">Lista de Empresas </h4>
-        <button class="float-end" ><i class="fas fa-plus"></i> Nueva Empresa</button>
-     </div>
-     <div class="card mt-4">
+    <div class="contenedor-texto">
+      <h4 class="d-inline ">Lista de Empresas </h4>
+      <button class="float-end" ><i class="fas fa-plus"></i> Nueva Empresa</button>
+    </div>
+    <div class="card mt-4">
       <div class="card-body p-4">
         <table id="datatable" class="table">
           <thead class="table-secondary ">
             <tr class="">
-              <th scope="col">DNI</th>
-              <th scope="col">NOMBRES Y APELLIDOS</th>
-              <th scope="col">TELEFONO</th>
+              <th scope="col">RUC</th>
+              <th scope="col">RAZON SOCIAL</th>
+              <th scope="col">NOMBRE COMERCIAL</th>
               <th scope="col">CORREO</th>
               <th scope="col">ESTADO</th>
               <th scope="col">ACCIONES</th>
@@ -23,8 +23,8 @@
               <td >Luis Fernando Mechan LLontop</td>
               <td >937398743</td>
               <td >Luis@gmail.com</td>
-              <td >Activo</td>
-              <td >botones</td>
+              <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
+              <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit"></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
 
             </tr>
             <tr>
@@ -32,15 +32,15 @@
               <td >Luis Fernando Mechan LLontop</td>
               <td >937398743</td>
               <td >Luis@gmail.com</td>
-              <td >Activo</td>
-              <td >botones</td>
+              <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
+              <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit" ></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
 
             </tr>
           </tbody>
         </table>
       </div>
 
-     </div>
+    </div>
  
     
     
