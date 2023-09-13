@@ -93,6 +93,7 @@ export default {
     border: none;
     color: #FFFFFF;
     background:#2C3E50 ;
+    font-size: 12px;
  }
  .contenedor-perfil ul{
     padding: 0;
