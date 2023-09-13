@@ -13,7 +13,7 @@
             <p> <a href=""> Olvidaste tu contraseña?</a></p>
 
             <button @click="loginSend"> INGRESAR</button>
-            <p>Nuevo en PractiMatch? <router-link to="/RegistroEmpresa"> Registrate aqui</router-link></p>
+            <p>Nuevo en PractiMatch? <router-link to=""> Registrate aqui</router-link></p>
         </div>
     </div>
 </template>
@@ -51,7 +51,13 @@ export default {
                                 console.log(this.$store.getters.get__user);
                                 this.$router.push({ path: '/PanelAdmin' })
                             } else {
-                               alert('Datos incorrectos');
+                                Swal.fire({
+              title: "Datos Incorrecto",
+              text: "Incorrecto!",
+              icon: "error",
+               width: "400px",
+               confirmButtonColor: "red", // Cambia el color a rojo
+});
                             }
                         })
                         .catch((errors) => {
