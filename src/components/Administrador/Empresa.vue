@@ -39,8 +39,8 @@
               <td >empresa@gmail.com</td>
               <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
               <td class=" px-0 py-2">
-                <button type="button" class="btn btn-warning btn-icon me-1" data-bs-toggle="modal" data-bs-target="#nuevo"><i class="fas fa-edit"></i>
-                </button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button>
+                <button type="button" class="btn btn-warning btn-icon me-1" data-bs-toggle="modal" data-bs-target="#nuevo"><i class="fas fa-edit"></i></button> 
+                <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button>
               </td>
 
             </tr>
