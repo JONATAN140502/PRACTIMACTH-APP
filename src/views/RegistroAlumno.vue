@@ -17,30 +17,78 @@
           </div>
           <div>
             <label for=""> NOMBRE Y APELLIDOS: </label>
-            <input type="text" v-model="student.last_name" >
+            <input type="text" v-model="student.fullName" >
           </div>
          
           
           <div class="correo">
             <label for=""> CORREO: </label>
-            <input type="text" v-model="student.dni">
+            <input type="text" v-model="student.correo">
           </div>
           
           <div>
             <label for=""> TELEFONO: </label>
-            <input type="text" v-model="student.dni">
+            <input type="text" v-model="student.phone">
           </div>
           <div>
             <label for=""> USUARIO</label>
-            <input type="text" v-model="student.dni">
+            <input type="text" v-model="student.user_name">
           </div>
           <div>
             <label for=""> CONTRASEÑA</label>
-            <input type=" password" v-model="student.dni">
+            <input type=" password" v-model="student.password">
+          </div>
+          <div>
+            <label for="">CODIGO UNIVERSITARIO</label>
+            <input type=" password" v-model="student.code">
+          </div>
+          <div>
+            <label for=""> FACULTAD: </label>
+            <select v-model="filter.faculty" 
+                  @change="mtdSelectFaculty"
+                    >
+                    <option selected >Seleccione</option>
+                      <option
+                        v-for="(item, index) in faculties"
+                        :key="index"
+                        :value="item.id"
+                      >
+                        {{ item.name }}
+                      </option>
+                    </select> 
+          </div>
+          <div>
+            <label for=""> ESCUELA:</label>
+            <select v-model="student.id_school"   >
+                    <option selected >Seleccione </option>
+                      <option
+                        v-for="(item, index) in schools"
+                        :key="index"
+                        :value="item.id"
+                      >
+                        {{ item.name }}
+                      </option>
+             </select> 
+          </div>
+          <div>
+            <label for="">CICLO</label>
+            <select v-model="student.cicle" class="text-center" >
+           <option value="0" selected >Seleccionar ciclo académico</option>
+            <option value="1">I</option>
+            <option value="1">II</option>
+            <option value="1">III</option>
+            <option value="1">IV</option>
+            <option value="1">V</option>
+            <option value="1">VI</option>
+            <option value="1">VII</option>
+            <option value="1">VIII</option>
+            <option value="1">IX</option>
+            <option value="1">X</option>
+             </select>
           </div>
           
         </div>
-     <button type="button"> Crear Cuenta </button>
+     <button type="button" @click="mtdInsertData()" > Crear Cuenta </button>
       </div>
     </div>
   </div>
@@ -53,21 +101,32 @@ export default {
     return{
       student:{
       name:null,
-      names:null,
+      user_name:null,
       last_name:null,
       code:null,
       dni:null,
       correo:null,
       phone:null,
       id_school:null,
+      password:null,
       skills:null,
       state:null,
       cicle:null,
+      fullName:null
     },
-    documento:null
+    document:{
+      documento:null
+    },
+    filter:{
+      faculty:null,
+
+        },
+    faculties:[],
+    schools:[]
     }
    },
    created() {
+    this.mtdGetData();
     
   },
 
@@ -77,9 +136,32 @@ export default {
     methods: {
     ...mapActions(["get", "post"]),
     //metodo insertar data
+    mtdGetData(){
+      this.get({
+          url: this.$store.getters.get__url +"/faculty",
+          params: '',
+        }).then((response) => {
+          console.log(response.data);
+            if (response.data!=null) {
+               this.faculties=response.data;
+             } 
+          })
+          .catch((errors) => {});
+    },
+    mtdSelectFaculty(){
+      this.post({
+          url: this.$store.getters.get__url + "/faculty/filter",
+          params: this.filter,
+        }).then((response) => {
+            if (response.schools!=null) {
+               this.schools=response.schools;
+             } 
+          })
+          .catch((errors) => {});
+    },
     mtdInsertData: function () {
         this.post({
-          url: this.$store.getters.get__url + "/company/store",
+          url: this.$store.getters.get__url + "/student/store",
           token: this.$store.getters.get__token,
           params: this.student,
         })
@@ -90,16 +172,20 @@ export default {
                 title: "Registro Exitoso",
                 text: "Perfecto!",
                 icon: "success",
-                //showConfirmButton: true,
                 width: "400px",
-                //padding: '50px 0',
-                //timer: 2000
                 confirmButtonColor: "rgb(170, 2, 95)",
               });
-              this.dataCategory.push(response.data[0]);
-              this.mtdHideModal();
-              //this.$refs.modalForm.modal("hide");
+              this.limpiardatos();
+              this.$router.push({ path: '/LoginAlumnos' });
             } else {
+        console.log(this.student);
+              Swal.fire({
+              title: "Registro Fallido",
+              text: "Incorrecto!",
+              icon: "error",
+               width: "400px",
+               confirmButtonColor: "red", // Cambia el color a rojo
+});
             }
           })
           .catch((errors) => {});
@@ -107,46 +193,37 @@ export default {
     },
     mtdSearchDocument: function(){
       if (this.student.dni.length == 8) {
-        this.documento=this.student.dni;
+        this.document.documento=this.student.dni;
         this.post({
           url:
             this.$store.getters.get__url +
             "/consulta/dni" ,
-            params: this.documento,
+            params: this.document,
             
         })
           .then((response) => {
            console.log(response);
-
-            // if (response.boo == 3) {
-            //   this.client.document="";
-            //   Swal.fire({
-            //   text:'DNI no encontrado',
-            //   icon:'warning', 
-            //   confirmButtonColor: '#900052',
-            // });
-            // } else {
-            //   this.client.fullName = response.name+" "+response.last_name;
-            //   if (response.hasOwnProperty("patient")) {
-            //     this.client.celphone=response.patient.phone;
-            //     this.client.email=response.patient.email;
-            //     this.client.yearOld=response.patient.year;
-            //       } else {
-            //         this.client.celphone="";
-            //     this.client.email="";
-            //     this.client.yearOld="";
-            //         Swal.fire({
-            //   text:'Paciente Nuevo',
-            //   icon:'warning', 
-            //   confirmButtonColor: '#900052',
-            // });
-            //       }
-             
-            // }
+           console.log(this.document);
+            if (response.data==null) {
+              this.student.dni="";
+              Swal.fire({
+              text:'DNI no encontrado',
+              icon:'warning', 
+              confirmButtonColor: '#808080',
+            });
+            this.limpiardatos();
+            } else {
+              this.student.fullName = response.data.name+" "+response.data.last_name;
+              this.student.last_name=response.data.last_name;
+              this.student.name=response.data.name;
+              this.student.dni=response.data.document;
+              this.student.skills="Completar";
+            }
           })
           .catch((errors) => {});
       }
     },
+   
     isNumber: function (evt) {
       evt = evt ? evt : window.event;
       var charCode = evt.which ? evt.which : evt.keyCode;
@@ -160,7 +237,23 @@ export default {
         return true;
       }
     },
+    limpiardatos:function(){
+      this.student.name="",
+      this.student.user_name="",
+      this.student.last_name="",
+      this.student.code="",
+      this.student.dni="",
+      this.student.correo="",
+      this.student.phone="",
+      this.student.id_school="",
+      this.student.password="",
+      this.student.skills="",
+      this.student.state="",
+      this.student.cicle="",
+      this.student.fullName=""
+    },
   }
+  
 }
 </script>
 
