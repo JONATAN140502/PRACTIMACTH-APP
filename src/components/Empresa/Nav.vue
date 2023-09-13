@@ -7,7 +7,7 @@
      
       <div class="contenedor-texto">
         <h3>Panel Empresa </h3>
-        <p>Hola Luis, Bienvenido a PractiMacth</p>
+        <p>Hola {{ user }} , Bienvenido a PractiMacth</p>
       </div>
       
 
@@ -18,7 +18,9 @@
 <script>
 
 export default {
-
+  created() {
+        this.user = this.$store.getters.get__company.name;
+    },
 }
 </script>
 
