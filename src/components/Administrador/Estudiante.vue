@@ -23,8 +23,8 @@
               <td >Luis Fernando Mechan LLontop</td>
               <td >937398743</td>
               <td >Luis@gmail.com</td>
-              <td >Activo</td>
-              <td >botones</td>
+              <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
+              <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit" ></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
 
             </tr>
             <tr>
@@ -32,8 +32,8 @@
               <td >Luis Fernando Mechan LLontop</td>
               <td >937398743</td>
               <td >Luis@gmail.com</td>
-              <td >Activo</td>
-              <td >botones</td>
+              <td ><button type="button" class="btn btn-success btn-icon">Activo</button></td>
+              <td ><button type="button" class="btn btn-warning btn-icon"><i class="fas fa-edit" ></i></button> <button type="button" class="btn btn-danger btn-icon"><i class="fas fa-trash-alt"></i></button></td>
 
             </tr>
           </tbody>
