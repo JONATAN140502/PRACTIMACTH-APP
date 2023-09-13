@@ -72,12 +72,23 @@
             <button>Actualizar</button>
           </div>
          </div>
-         <div class="card card-2 text-center">
-           <div class=" ">
+         <div class=" card-conte">
+           <div class=" card card-2 text-center">
               <img src="../../assets/educacion.png"  class="mx-auto mb-3 " alt="">
               <h5 class="text-white mb-2">Luis Fernando</h5>
               <p class="text-white">Luis@gmail.com</p>
            </div>
+            
+           <div class="card contenedor-card2">
+            <h5> Configura tu Perfil</h5>
+            <img src="../../assets/perfil.png" alt="" class="mx-auto">
+            <p> ¡Estás a punto de convertirte en un candidato excepcional!. 
+              Las empresas valoran tus habilidades de manera muy positiva.
+              Ahora es el momento de perfeccionar tu perfil y resaltar tus Habilidades.
+            </p>
+            <button @click="cambiopagina('perfil')" >Mejorar Perfil</button>
+          </div>
+
          </div>
 
       </div>
@@ -209,20 +220,48 @@ export default {
     background: rgb(31, 97, 141, 0.9) ;
    
   }
-  .card-2{
+  .card-conte{
     width: 29%;
-    height: 400px;
+  }
+  .card-2{
+   
+    height: 300px;
    
   }
-  .card-2 div{
+  .card-2 {
     height: 300px;
     background: #1F618D;
     padding: 50px;
+    margin-bottom: 15px;
   }
-  .card-2 div img{
+  .card-2  img{
     height: 100px;
   }
 
+  .contenedor-card2 img{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+ }
+ .contenedor-card2 p{
+  font-size: 13px;
+  text-align: justify;
+ }
+ .contenedor-card2 button{
+  border: none;
+  background: #1F618D;
+  color: white;
+  padding: 7px 0px;
+  border-radius: 25px;
+ }
+ .contenedor-card2 button:hover{
+  background: #1A5276;
+ }
+ .contenedor-card2{
   
+  padding:20px 30px;
+  height: 395px;
+ }
 
 </style>
