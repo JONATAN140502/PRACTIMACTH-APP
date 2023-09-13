@@ -25,22 +25,22 @@
               <label for="phone">Telefono:</label>
               <input id="phone" name="phone" type=" tel" v-model="company.phone" />
             </div>
-            <div class="correo">
+          </div>
+          <div class="correo">
               <label for="correo">Correo:</label>
               <input id="correo" name="correo" type=" email" v-model="company.correo" />
             </div>
-          </div>
-          <div class="d-flex input-flex">
-            <div><h5>Areas</h5><br></div>
-            
+          
+        </div>
+        <div class="">
+            <div><h5>Areas</h5></div>
             <ul class="list-group">
               <div v-for="item in areas">
                 <li class="list-group-item">{{item}}</li>
               </div>
   
-</ul>
+              </ul>
           </div>
-        </div>
         <h5>Cambiar Contraseña</h5>
         <p>
           Para actualizar la contraseña de esta cuenta debera ingresar la
