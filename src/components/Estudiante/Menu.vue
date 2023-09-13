@@ -10,7 +10,7 @@
                     </button>
                     <ul class="dropdown-menu ">
                         <li>
-                            <a class="" href="#">Perfil</a>
+                            <a class="" href="#" @click="cambiopagina('perfil')">Perfil</a>
                         </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>

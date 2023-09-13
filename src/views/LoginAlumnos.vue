@@ -53,7 +53,8 @@ export default {
                                 console.log(this.$store.getters.get__student);
                                 console.log(this.$store.getters.get__user);
                                 console.log("company:" + response.state);
-                                alert('BIENVENIDO');
+                                this.$router.push({ path: '/PanelEstudiante' })
+                              
                             } else {
                                alert('Datos incorrectos');
                             }
