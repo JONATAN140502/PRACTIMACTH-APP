@@ -9,7 +9,7 @@
             <p>{{ item.descripcion }}
             </p>   
             <p>{{item.date}}</p> 
-            <button >Ver Macth</button>            
+            <button @click="mtdListStudent(item.id)" >Ver Macth</button>            
            </div>
     
       </div>
@@ -33,11 +33,10 @@ export default {
   data(){
     return{
       page:null,
-      dataMatch:[],
+      dataStudent:[],
       dataPractices:[],
       filter:{
-        type:"company",
-        valueFilter: this.$store.getters.get__company.id ,
+        valueFilter: null,
         labelFilter: "id_company",
         id: this.$store.getters.get__company.id,
       }
@@ -66,6 +65,18 @@ export default {
             })
                 .catch((errors) => { });
         },
+        mtdListStudent:function(id){
+          this.filter.valueFilter=id;
+          this.post({
+                url: this.$store.getters.get__url + "/match/myMatches",
+                token: this.$store.getters.get__token,
+                params: this.filter,
+            }).then((response) => {
+                this.dataStudent = response;
+                console.log(response);
+            })
+                .catch((errors) => { });
+        }
    }
 }
 </script>
