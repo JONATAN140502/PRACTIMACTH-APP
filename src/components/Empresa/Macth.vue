@@ -57,11 +57,11 @@ export default {
        mtdGetData: function () {
 
             this.post({
-                url: this.$store.getters.get__url + "/practice/filter",
+                url: this.$store.getters.get__url + "/match/practicesMatch",
                 token: this.$store.getters.get__token,
                 params: this.filter,
             }).then((response) => {
-                this.dataPractices = response.data;
+                this.dataPractices = response;
                 //console.log(response.data);
             })
                 .catch((errors) => { });
